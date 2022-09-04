@@ -1,0 +1,169 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+
+import { Spinner } from "./spinner";
+import { Button } from "../button/button";
+
+<Meta title="UI/Spinner" component={Spinner} />
+
+# Spinner
+
+<p class="sbdocs-desc">
+    Indicate the loading state of a component or page with Bootstrap spinners,
+    built entirely with HTML, CSS, and no JavaScript.
+</p>
+
+<Canvas>
+    <Story
+        name="Spinner Controls"
+        argTypes={{
+            className: {
+                control: {
+                    type: `text`,
+                },
+            },
+            variant: {
+                control: {
+                    type: `select`,
+                    options: ["border", "grow"],
+                },
+            },
+            color: {
+                control: {
+                    type: `select`,
+                    options: [
+                        "primary",
+                        "secondary",
+                        "success",
+                        "danger",
+                        "warning",
+                        "info",
+                        "light",
+                        "dark",
+                        "white",
+                    ],
+                },
+            },
+            size: {
+                control: {
+                    type: `select`,
+                    options: ["xs", "sm", "md", "lg", "xl"],
+                },
+            },
+        }}
+    >
+        {(args) => {
+            return <Spinner {...args} />;
+        }}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Spinner} story="Spinner Controls" />
+
+## Border Spinner
+
+Use the border spinners for a lightweight loading indicator.
+
+<Preview withToolbar>
+    <Story name="Border Spinner">
+        <Spinner />
+    </Story>
+</Preview>
+
+## Border Colors
+
+Pass color within `color` props the standard spinner.
+
+<Preview withToolbar>
+    <Story name="Border Colors">
+        <Spinner color="primary" />
+        <Spinner color="secondary" />
+        <Spinner color="success" />
+        <Spinner color="danger" />
+        <Spinner color="warning" />
+        <Spinner color="info" />
+        <Spinner color="light" />
+        <Spinner color="dark" />
+        <Spinner color="white" />
+    </Story>
+</Preview>
+
+## Growing Spinner
+
+If you don’t fancy a border spinner, switch to the grow spinner. While it doesn’t technically spin, it does repeatedly grow!
+
+<Preview withToolbar>
+    <Story name="Growing Spinner">
+        <Spinner variant="grow" />
+    </Story>
+</Preview>
+
+## Growing Colors
+
+If you don’t fancy a border spinner, switch to the grow spinner. While it doesn’t technically spin, it does repeatedly grow!
+
+<Preview withToolbar>
+    <Story name="Growing Colors">
+        <Spinner variant="grow" color="primary" />
+        <Spinner variant="grow" color="secondary" />
+        <Spinner variant="grow" color="success" />
+        <Spinner variant="grow" color="danger" />
+        <Spinner variant="grow" color="warning" />
+        <Spinner variant="grow" color="info" />
+        <Spinner variant="grow" color="light" />
+        <Spinner variant="grow" color="dark" />
+        <Spinner variant="grow" color="white" />
+    </Story>
+</Preview>
+
+## Alignment
+
+Use flexbox or text alignment to place spinners exactly where you need them in any situation.
+
+<Preview withToolbar>
+    <Story name="Alignment">
+        <div className="text-left">
+            <Spinner />
+        </div>
+        <div className="text-center">
+            <Spinner />
+        </div>
+        <div className="text-right">
+            <Spinner />
+        </div>
+    </Story>
+</Preview>
+
+## Size
+
+Pass size within `size` props to make a smaller or larger spinner that can quickly be used within other components.
+
+<Preview withToolbar>
+    <Story name="Size">
+        <Spinner size="xs" />
+        <Spinner size="sm" />
+        <Spinner size="md" />
+        <Spinner size="lg" />
+        <Spinner size="xl" />
+    </Story>
+</Preview>
+
+## With Button
+
+Use spinners within buttons to indicate an action is currently processing or taking place. You may also swap the text out of the spinner element and utilize button text as needed.
+
+<Preview withToolbar>
+    <Story name="With Button">
+        <Button inconButton size="md" disabled>
+            <Spinner size="sm" />
+        </Button>
+        <Button hasIcon size="md" disabled>
+            <Spinner size="sm" /> Loading
+        </Button>
+    </Story>
+</Preview>

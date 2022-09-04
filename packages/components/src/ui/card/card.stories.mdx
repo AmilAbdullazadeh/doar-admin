@@ -1,0 +1,440 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+import {
+    Card,
+    CardImage,
+    CardBody,
+    CardTitle,
+    CardSubtitle,
+    CardText,
+    CardLink,
+    CardHeader,
+    CardFooter,
+    CardImageOverlay,
+    CardGroup,
+    CardDeck,
+    CardColumns,
+} from "./card";
+import { Button } from "../button/button";
+import image from "../../static/img12.jpg";
+import image2 from "../../static/img2.jpg";
+import placeholdImage from "../../static/placehold.jpg";
+
+<Meta title="UI/Card" component={Card} />
+
+# Overview
+
+A flexible and extensible content container with multiple variants and options
+
+## Basic Example
+
+Below is an example of a basic card with mixed content and a fixed width. Cards have no fixed width to start, so they’ll naturally fill the full width of its parent element.
+
+<Preview withToolbar>
+    <Story name="Basic Example">
+        <Card width={["100%", "40%"]}>
+            <CardImage src={image} alt="card" />
+            <CardBody>
+                <CardTitle as="h5">Card title</CardTitle>
+                <CardText>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                </CardText>
+                <Button>Go somewhere</Button>
+            </CardBody>
+        </Card>
+    </Story>
+</Preview>
+
+## Content Types
+
+Cards support a wide variety of content, including images, text, list groups, links, and more. Below are examples of what’s supported.
+
+### Body
+
+The building block of a card is the `CardBody`. Use it whenever you need a padded section within a card.
+
+<Preview withToolbar>
+    <Story name="Body">
+        <Card width={["100%", "40%"]}>
+            <CardBody>
+                <CardText>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                </CardText>
+            </CardBody>
+        </Card>
+    </Story>
+</Preview>
+
+### Title, Text and Links
+
+<Preview withToolbar>
+    <Story name="Title, Text and Links">
+        <Card width={["100%", "40%"]}>
+            <CardBody>
+                <CardTitle as="h5">Card title</CardTitle>
+                <CardSubtitle>Card subtitle</CardSubtitle>
+                <CardText>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                </CardText>
+                <CardLink path="/">Card link</CardLink>
+                <CardLink path="/">Another link</CardLink>
+            </CardBody>
+        </Card>
+    </Story>
+</Preview>
+
+### Card Images
+
+<Preview withToolbar>
+    <Story name="Card Images">
+        <>
+            <Card width={["100%", "40%"]}>
+                <CardImage
+                    isTop={true}
+                    src={placeholdImage}
+                    alt="placehold image"
+                />
+                <CardBody>
+                    <CardText>
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                    </CardText>
+                </CardBody>
+            </Card>
+            <Card width={["100%", "40%"]}>
+                <CardBody>
+                    <CardText>
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                    </CardText>
+                </CardBody>
+                <CardImage
+                    isBottom={true}
+                    src={placeholdImage}
+                    alt="placehold image"
+                />
+            </Card>
+        </>
+    </Story>
+</Preview>
+
+### Header & Footer
+
+Add an optional header and/or footer within a card.
+
+<Preview withToolbar>
+    <Story name="Header & Footer">
+        <>
+            <Card width={["100%", "40%"]}>
+                <CardHeader>Featured</CardHeader>
+                <CardBody>
+                    <CardText>
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                    </CardText>
+                </CardBody>
+            </Card>
+            <Card width={["100%", "40%"]}>
+                <CardBody>
+                    <CardText>
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                    </CardText>
+                </CardBody>
+                <CardFooter>
+                    <CardLink path="/">Like</CardLink>
+                    <CardLink path="/">Comments</CardLink>
+                    <CardLink path="/">Share</CardLink>
+                </CardFooter>
+            </Card>
+        </>
+    </Story>
+</Preview>
+
+### Image Overlay
+
+Turn an image into a card background and overlay your card’s text.
+
+<Preview withToolbar>
+    <Story name="Image Overlay">
+        <>
+            <Card width={["100%", "50%"]}>
+                <CardImage src={image2} alt="card" />
+                <CardImageOverlay>
+                    <CardTitle as="h5" color="white">
+                        Card Title
+                    </CardTitle>
+                    <CardText color="#fff">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                    </CardText>
+                    <CardText color="#fff" fontSize="11px">
+                        Last updated 3 mins ago
+                    </CardText>
+                </CardImageOverlay>
+            </Card>
+        </>
+    </Story>
+</Preview>
+
+### Background Color
+
+Use text and background utilities to change the appearance of a card.
+
+<Preview withToolbar>
+    <Story name="Background Color">
+        <>
+            <Card width={["100%", "40%"]} color="primary">
+                <CardHeader>Header</CardHeader>
+                <CardBody>
+                    <CardText>
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                    </CardText>
+                </CardBody>
+            </Card>
+            <Card width={["100%", "40%"]} color="secondary">
+                <CardHeader>Header</CardHeader>
+                <CardBody>
+                    <CardText>
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                    </CardText>
+                </CardBody>
+            </Card>
+            <Card width={["100%", "40%"]} color="success">
+                <CardHeader>Header</CardHeader>
+                <CardBody>
+                    <CardText>
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                    </CardText>
+                </CardBody>
+            </Card>
+            <Card width={["100%", "40%"]} color="warning">
+                <CardHeader>Header</CardHeader>
+                <CardBody>
+                    <CardText>
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                    </CardText>
+                </CardBody>
+            </Card>
+            <Card width={["100%", "40%"]} color="danger">
+                <CardHeader>Header</CardHeader>
+                <CardBody>
+                    <CardText>
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                    </CardText>
+                </CardBody>
+            </Card>
+            <Card width={["100%", "40%"]} color="info">
+                <CardHeader>Header</CardHeader>
+                <CardBody>
+                    <CardText>
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                    </CardText>
+                </CardBody>
+            </Card>
+        </>
+    </Story>
+</Preview>
+
+### Card Groups
+
+Use card groups to render cards as a single, attached element with equal width and height columns. Card groups use flex display to achieve their uniform sizing.
+
+<Preview withToolbar>
+    <Story name="Card Groups">
+        <>
+            <CardGroup>
+                <Card>
+                    <CardImage isTop src={image2} alt="card" />
+                    <CardBody>
+                        <CardTitle as="h4">Card Title</CardTitle>
+                        <CardText>
+                            This is a wider card with supporting text below as a
+                            natural lead-in to additional content. This content
+                            is a little bit longer.
+                        </CardText>
+                        <CardText fontSize="11px" color="gray600">
+                            Last updated 3 mins ago
+                        </CardText>
+                    </CardBody>
+                </Card>
+                <Card>
+                    <CardImage isTop src={image2} alt="card" />
+                    <CardBody>
+                        <CardTitle as="h4">Card Title</CardTitle>
+                        <CardText>
+                            This card has supporting text below as a natural
+                            lead-in to additional content.
+                        </CardText>
+                        <CardText fontSize="11px" color="gray600">
+                            Last updated 3 mins ago
+                        </CardText>
+                    </CardBody>
+                </Card>
+                <Card>
+                    <CardImage isTop src={image2} alt="card" />
+                    <CardBody>
+                        <CardTitle as="h4">Card Title</CardTitle>
+                        <CardText>
+                            This is a wider card with supporting text below as a
+                            natural lead-in to additional content. This card has
+                            even longer content than the first to show that
+                            equal height action.
+                        </CardText>
+                        <CardText fontSize="11px" color="gray600">
+                            Last updated 3 mins ago
+                        </CardText>
+                    </CardBody>
+                </Card>
+            </CardGroup>
+        </>
+    </Story>
+</Preview>
+
+### Card Decks
+
+Need a set of equal width and height cards that aren’t attached to one another? Use card decks.
+
+<Preview withToolbar>
+    <Story name="Card Decks">
+        <>
+            <CardDeck>
+                <Card>
+                    <CardImage isTop src={image2} alt="card" />
+                    <CardBody>
+                        <CardTitle as="h4">Card Title</CardTitle>
+                        <CardText>
+                            This is a wider card with supporting text below as a
+                            natural lead-in to additional content. This content
+                            is a little bit longer.
+                        </CardText>
+                        <CardText fontSize="11px" color="gray600">
+                            Last updated 3 mins ago
+                        </CardText>
+                    </CardBody>
+                </Card>
+                <Card>
+                    <CardImage isTop src={image2} alt="card" />
+                    <CardBody>
+                        <CardTitle as="h4">Card Title</CardTitle>
+                        <CardText>
+                            This card has supporting text below as a natural
+                            lead-in to additional content.
+                        </CardText>
+                        <CardText fontSize="11px" color="gray600">
+                            Last updated 3 mins ago
+                        </CardText>
+                    </CardBody>
+                </Card>
+                <Card>
+                    <CardImage isTop src={image2} alt="card" />
+                    <CardBody>
+                        <CardTitle as="h4">Card Title</CardTitle>
+                        <CardText>
+                            This is a wider card with supporting text below as a
+                            natural lead-in to additional content. This card has
+                            even longer content than the first to show that
+                            equal height action.
+                        </CardText>
+                        <CardText fontSize="11px" color="gray600">
+                            Last updated 3 mins ago
+                        </CardText>
+                    </CardBody>
+                </Card>
+            </CardDeck>
+        </>
+    </Story>
+</Preview>
+
+### Card Columns
+
+Cards can be organized into Masonry-like columns with just CSS by wrapping them in `CardColumns`.
+
+<Preview withToolbar>
+    <Story name="Card Columns">
+        <>
+            <CardColumns>
+                <Card>
+                    <CardImage isTop src={image2} alt="card" />
+                    <CardBody>
+                        <CardTitle as="h4">Card Title</CardTitle>
+                        <CardText>
+                            This is a wider card with supporting text below as a
+                            natural lead-in to additional content. This content
+                            is a little bit longer.
+                        </CardText>
+                        <CardText fontSize="11px" color="gray600">
+                            Last updated 3 mins ago
+                        </CardText>
+                    </CardBody>
+                </Card>
+                <Card>
+                    <CardBody>
+                        <blockquote className="blockquote">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Integer posuere erat a ante.
+                            </p>
+                            <footer className="blockquote-footer">
+                                <small>
+                                    Someone famous in{" "}
+                                    <cite title="Source Title">
+                                        Source Title
+                                    </cite>
+                                </small>
+                            </footer>
+                        </blockquote>
+                    </CardBody>
+                </Card>
+                <Card>
+                    <CardImage isTop src={image2} alt="card" />
+                    <CardBody>
+                        <CardTitle as="h4">Card Title</CardTitle>
+                        <CardText>
+                            This card has supporting text below as a natural
+                            lead-in to additional content.
+                        </CardText>
+                        <CardText fontSize="11px" color="gray600">
+                            Last updated 3 mins ago
+                        </CardText>
+                    </CardBody>
+                </Card>
+                <Card color="primary">
+                    <CardBody>
+                        <blockquote className="blockquote">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Integer posuere erat a ante.
+                            </p>
+                            <footer className="blockquote-footer">
+                                <small>
+                                    Someone famous in{" "}
+                                    <cite title="Source Title">
+                                        Source Title
+                                    </cite>
+                                </small>
+                            </footer>
+                        </blockquote>
+                    </CardBody>
+                </Card>
+                <Card>
+                    <CardImage isTop src={image2} alt="card" />
+                </Card>
+            </CardColumns>
+        </>
+    </Story>
+</Preview>

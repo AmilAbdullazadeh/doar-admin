@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig.react.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "composite": true,
+    "noFallthroughCasesInSwitch": true,
+    "jsx": "react-jsx",
+    "outDir": "dist",
+    "rootDir": ".",
+    "noEmit": false,
+    "downlevelIteration": true
+  },
+  "include": [ "." ],
+  "exclude": ["dist", "*.js"]
+}
+ 

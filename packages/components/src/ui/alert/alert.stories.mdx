@@ -1,0 +1,236 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+
+import { Alert } from "./alert";
+import { AlertCircle } from "react-feather";
+
+<Meta title="UI/Alert" component={Alert} />
+
+# Alerts
+
+<p class="sbdocs-desc">
+    Provide contextual feedback messages for typical user actions.
+</p>
+
+<Canvas>
+    <Story
+        name="Alert Controls"
+        argTypes={{
+            variant: {
+                control: {
+                    type: `select`,
+                },
+            },
+            color: {
+                control: {
+                    type: `select`,
+                },
+            },
+        }}
+        args={{
+            variant: `contained`,
+            color: `primary`,
+            solid: false,
+            hasLink: false,
+            isDismissible: false,
+            hasIcon: false,
+            children: `A simple alert—check it out!`,
+        }}
+    >
+        {(args) => {
+            const { children, hasLink, hasIcon, ...restArgs } = args;
+            if (hasLink) {
+                return (
+                    <Alert hasLink={hasLink} hasIcon={hasIcon} {...restArgs}>
+                        A simple primary alert with{" "}
+                        <a href="/">an example link.</a> Give it a click if you
+                        like.
+                    </Alert>
+                );
+            } else if (hasIcon) {
+                return (
+                    <Alert hasLink={hasLink} hasIcon={hasIcon} {...restArgs}>
+                        <AlertCircle size="24" /> A primary alert—check it out!
+                    </Alert>
+                );
+            } else {
+                return (
+                    <Alert hasLink={hasLink} hasIcon={hasIcon} {...restArgs}>
+                        {children}
+                    </Alert>
+                );
+            }
+        }}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Alert} story="Alert Controls" />
+
+## Variants
+
+Alert has two different variants
+
+<Preview withToolbar>
+    <Story name="Variant">
+        <Alert variant="contained" color="primary">
+            A simple contained alert—check it out!
+        </Alert>
+        <Alert variant="outlined" color="primary">
+            A simple outlined alert—check it out!
+        </Alert>
+    </Story>
+</Preview>
+
+## Default Functionality
+
+Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight required contextual props.
+
+<Preview withToolbar>
+    <Story name="Color">
+        <Alert color="primary">A simple primary alert—check it out!</Alert>
+        <Alert color="secondary">A simple secondary alert—check it out!</Alert>
+        <Alert color="success">A simple success alert—check it out!</Alert>
+        <Alert color="danger">A simple danger alert—check it out!</Alert>
+        <Alert color="warning">A simple warning alert—check it out!</Alert>
+        <Alert color="info">A simple info alert—check it out!</Alert>
+        <Alert color="light">A simple light alert—check it out!</Alert>
+        <Alert color="dark">A simple dark alert—check it out!</Alert>
+    </Story>
+</Preview>
+
+## Alert Link
+
+Use the `hasLink` prop to quickly provide matching colored links within any alert.
+
+<Preview withToolbar>
+    <Story name="Has Link">
+        <Alert color="primary" hasLink>
+            A simple primary alert with <a href="/">an example link.</a> Give it
+            a click if you like.
+        </Alert>
+    </Story>
+</Preview>
+
+## Additional Content
+
+Alerts can also contain additional HTML elements like headings, paragraphs and dividers.
+
+<Preview withToolbar>
+    <Story name="Additional Content">
+        <Alert color="success">
+            <h6>Well done!</h6>
+            <p>
+                Aww yeah, you successfully read this important alert message.
+                This example text is going to run a bit longer so that you can
+                see how spacing within an alert works with this kind of content.
+            </p>
+            <hr />
+            <p>
+                Whenever you need to, be sure to use margin utilities to keep
+                things nice and tidy.
+            </p>
+        </Alert>
+    </Story>
+</Preview>
+
+## Dismissing
+
+it’s possible to dismiss any alert inline. Pass `isDismissible` to add a dismiss button, which adds extra padding to the right of the alert and positions the .close button.
+
+<Preview withToolbar>
+    <Story name="Dismissing">
+        <Alert color="warning" isDismissible>
+            <strong>Holy guacamole!</strong> You should check in on some of
+            those fields below.
+        </Alert>
+    </Story>
+</Preview>
+
+## Outline Style
+
+An outline style variant with a little thicker border and a little thicker font weight with both border and text have the same color. Use one of the eight required contextual props.
+
+<Preview withToolbar>
+    <Story name="Outlined">
+        <Alert color="primary" variant="outlined">
+            A outline primary alert—check it out!
+        </Alert>
+        <Alert color="secondary" variant="outlined">
+            A outline secondary alert—check it out!
+        </Alert>
+        <Alert color="success" variant="outlined">
+            A outline success alert—check it out!
+        </Alert>
+        <Alert color="danger" variant="outlined">
+            A outline danger alert—check it out!
+        </Alert>
+        <Alert color="warning" variant="outlined">
+            A outline warning alert—check it out!
+        </Alert>
+        <Alert color="info" variant="outlined">
+            A outline info alert—check it out!
+        </Alert>
+        <Alert color="light" variant="outlined">
+            A outline light alert—check it out!
+        </Alert>
+        <Alert color="dark" variant="outlined">
+            A outline dark alert—check it out!
+        </Alert>
+    </Story>
+</Preview>
+
+## Solid Background
+
+A solid background style variant with white text and without border. Use one of the eight required contextual classes.
+
+<Preview withToolbar>
+    <Story name="Solid Background">
+        <Alert color="primary" solid>
+            A solid primary alert—check it out!
+        </Alert>
+        <Alert color="secondary" solid>
+            A solid secondary alert—check it out!
+        </Alert>
+        <Alert color="success" solid>
+            A solid success alert—check it out!
+        </Alert>
+        <Alert color="danger" solid>
+            A solid danger alert—check it out!
+        </Alert>
+        <Alert color="warning" solid>
+            A solid warning alert—check it out!
+        </Alert>
+        <Alert color="info" solid>
+            A solid info alert—check it out!
+        </Alert>
+        <Alert color="light" solid>
+            A solid light alert—check it out!
+        </Alert>
+        <Alert color="dark" solid>
+            A solid dark alert—check it out!
+        </Alert>
+    </Story>
+</Preview>
+
+## Alert With Icon
+
+Adding icon to different alert variant add `hasIcon` props.
+
+<Preview withToolbar>
+    <Story name="Alert With Icon">
+        <Alert color="primary" hasIcon>
+            <AlertCircle size="24" /> A primary alert—check it out!
+        </Alert>
+        <Alert color="primary" variant="outlined" hasIcon>
+            <AlertCircle size="24" /> A primary alert—check it out!
+        </Alert>
+        <Alert color="primary" solid hasIcon>
+            <AlertCircle size="24" /> A primary alert—check it out!
+        </Alert>
+    </Story>
+</Preview>

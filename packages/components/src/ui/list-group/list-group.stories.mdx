@@ -1,0 +1,123 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+import { ListGroup, ListGroupItem } from "./list-group";
+
+<Meta title="UI/List Group" component={ListGroup} />
+
+# List Group
+
+<p class="sbdocs-desc">
+    List groups are a flexible and powerful component for displaying a series of
+    content.
+</p>
+
+## Basic Example
+
+The most basic list group is an unordered list with list items and the proper classes. Build upon it with the options that follow, or with your own CSS as needed.
+
+<Preview withToolbar>
+    <Story name="Basic Example">
+        <ListGroup>
+            <ListGroupItem>Cras justo odio</ListGroupItem>
+            <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
+            <ListGroupItem>Morbi leo risus</ListGroupItem>
+            <ListGroupItem>Porta ac consectetur ac</ListGroupItem>
+            <ListGroupItem>Vestibulum at eros</ListGroupItem>
+        </ListGroup>
+    </Story>
+</Preview>
+
+## Active Item
+
+Add `active` props to a `ListGroupItem` component to indicate the current active selection.
+
+<Preview withToolbar>
+    <Story name="Active Item">
+        <ListGroup>
+            <ListGroupItem>Cras justo odio</ListGroupItem>
+            <ListGroupItem active>Dapibus ac facilisis in</ListGroupItem>
+            <ListGroupItem>Morbi leo risus</ListGroupItem>
+            <ListGroupItem>Porta ac consectetur ac</ListGroupItem>
+            <ListGroupItem>Vestibulum at eros</ListGroupItem>
+        </ListGroup>
+    </Story>
+</Preview>
+
+## Disabled Item
+
+Add `disabled` props to a `ListGroupItem` component to indicate the current active selection.
+
+<Preview withToolbar>
+    <Story name="Disabled Item">
+        <ListGroup>
+            <ListGroupItem>Cras justo odio</ListGroupItem>
+            <ListGroupItem disabled>Dapibus ac facilisis in</ListGroupItem>
+            <ListGroupItem>Morbi leo risus</ListGroupItem>
+            <ListGroupItem>Porta ac consectetur ac</ListGroupItem>
+            <ListGroupItem>Vestibulum at eros</ListGroupItem>
+        </ListGroup>
+    </Story>
+</Preview>
+
+## Actionable items
+
+Toggle the action prop to create actionable list group items, with disabled, hover and active styles. List item actions will render a `button` or `a` (depending on the presence of an href) by default but can be overridden by setting the as prop as usual.
+
+<Preview withToolbar>
+    <Story name="Actionable items">
+        <ListGroup as="div">
+            <ListGroupItem active href="#" as="a" action>
+                Cras justo odio
+            </ListGroupItem>
+            <ListGroupItem disabled href="#" as="a" action>
+                Dapibus ac facilisis in
+            </ListGroupItem>
+            <ListGroupItem href="#" as="a" action>
+                Morbi leo risus
+            </ListGroupItem>
+            <ListGroupItem href="#" as="a" action>
+                Porta ac consectetur ac
+            </ListGroupItem>
+            <ListGroupItem href="#" as="a" action>
+                Vestibulum at eros
+            </ListGroupItem>
+        </ListGroup>
+    </Story>
+</Preview>
+
+# Flush
+
+Add the `flush` props to remove outer borders and rounded corners to render list group items edge-to-edge in a parent container such as a Card.
+
+<Preview withToolbar>
+    <Story name="Flush">
+        <ListGroup flush>
+            <ListGroupItem>Cras justo odio</ListGroupItem>
+            <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
+            <ListGroupItem>Morbi leo risus</ListGroupItem>
+            <ListGroupItem>Porta ac consectetur ac</ListGroupItem>
+            <ListGroupItem>Vestibulum at eros</ListGroupItem>
+        </ListGroup>
+    </Story>
+</Preview>
+
+## Horizontal
+
+Use the horizontal prop to make the ListGroup render horizontally. Currently horizontal list groups cannot be combined with flush list groups.
+
+<Preview withToolbar>
+    <Story name="Horizontal">
+        <ListGroup horizontal>
+            <ListGroupItem>Cras justo odio</ListGroupItem>
+            <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
+            <ListGroupItem>Morbi leo risus</ListGroupItem>
+            <ListGroupItem>Porta ac consectetur ac</ListGroupItem>
+            <ListGroupItem>Vestibulum at eros</ListGroupItem>
+        </ListGroup>
+    </Story>
+</Preview>

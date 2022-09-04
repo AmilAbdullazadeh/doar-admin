@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./packages",
+      "paths": {
+        "@doar/*": ["./*/src/"]
+      },
+      "jsx": "react",
+      "module": "CommonJS",
+      "composite": true,
+      "target": "ES2018",
+      "strict": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noImplicitReturns": true,
+      "declaration": true,
+      "skipLibCheck": true,
+      "allowJs": false,
+      "checkJs": false,
+    },
+    "exclude": ["node_modules", "docs", "stories", "__tests__"]
+}

@@ -1,0 +1,149 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+
+import { Progress } from "./progress";
+
+<Meta title="UI/Progress" component={Progress} />
+
+# Progress
+
+<p class="sbdocs-desc">
+    Documentation and examples for using Bootstrap custom progress bars
+    featuring support for stacked bars, animated backgrounds, and text labels.
+</p>
+
+<Canvas>
+    <Story
+        name="Progress Controls"
+        argTypes={{
+            min: {
+                control: {
+                    type: `number`,
+                },
+            },
+            max: {
+                control: {
+                    type: `number`,
+                },
+            },
+            now: {
+                control: {
+                    type: `number`,
+                },
+            },
+            isLabel: {
+                control: {
+                    type: `boolean`,
+                },
+            },
+            bg: {
+                control: {
+                    type: `color`,
+                },
+            },
+            height: {
+                control: {
+                    type: `text`,
+                },
+            },
+            striped: {
+                control: {
+                    type: `boolean`,
+                },
+            },
+            animated: {
+                control: {
+                    type: `boolean`,
+                },
+            },
+            className: {
+                control: {
+                    type: `text`,
+                },
+            },
+        }}
+        args={{
+            min: 0,
+            max: 100,
+            now: 40,
+        }}
+    >
+        {(args) => {
+            return <Progress {...args} />;
+        }}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Progress} story="Progress Controls" />
+
+## Basic Example
+
+Progress components are built with two HTML elements, some CSS to set the width, and a few attributes.
+
+<Preview withToolbar>
+    <Story name="Basic Example">
+        <Progress />
+    </Story>
+</Preview>
+
+## Labels
+
+Add labels to your progress bars by plassing `isLabel`.
+
+<Preview withToolbar>
+    <Story name="Labels">
+        <Progress height="20px" isLabel />
+    </Story>
+</Preview>
+
+## Height
+
+We only set a height value on the progress, so if you change that value the inner progress bar will automatically resize accordingly.
+
+<Preview withToolbar>
+    <Story name="Height">
+        <Progress height="20px" now={60} />
+        <Progress height="5px" now={30} />
+    </Story>
+</Preview>
+
+## Background
+
+Use background utility classes to change the appearance of individual progress bars.
+
+<Preview withToolbar>
+    <Story name="Background">
+        <Progress bg="success" now={80} />
+        <Progress bg="info" now={60} />
+        <Progress bg="#dc3545" now={90} />
+    </Story>
+</Preview>
+
+## Striped
+
+Pass `striped` to any progress bar to apply a stripe via CSS gradient over the progress bar’s background color.
+
+<Preview withToolbar>
+    <Story name="Striped">
+        <Progress striped bg="success" now={80} />
+        <Progress striped bg="info" now={60} />
+        <Progress striped bg="#dc3545" now={90} />
+    </Story>
+</Preview>
+
+## Animated Stripes
+
+The striped gradient can also be animated.
+
+<Preview withToolbar>
+    <Story name="Animated Stripes">
+        <Progress striped animated bg="success" now={80} />
+        <Progress striped animated bg="info" now={60} />
+        <Progress striped animated bg="#dc3545" now={90} />
+    </Story>
+</Preview>

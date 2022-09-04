@@ -1,0 +1,33 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+import { Breadcrumb, BreadcrumbItem } from "./breadcrumb";
+
+<Meta title="UI/Breadcrumb" component={Breadcrumb} />
+
+# Overview
+
+Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS
+
+## Basic Styling
+
+The example below is the basic styling of the breadcrumb
+
+<Preview withToolbar>
+    <Story name="Basic Styling">
+        <Breadcrumb>
+            <BreadcrumbItem active>Home</BreadcrumbItem>
+        </Breadcrumb>
+        <Breadcrumb>
+            <BreadcrumbItem path="/">Home</BreadcrumbItem>
+            <BreadcrumbItem path="/">Library</BreadcrumbItem>
+            <BreadcrumbItem active>Data</BreadcrumbItem>
+        </Breadcrumb>
+    </Story>
+</Preview>
+
+<ArgsTable of={Breadcrumb} story="Basic Styling" />

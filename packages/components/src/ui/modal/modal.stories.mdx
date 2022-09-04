@@ -1,0 +1,284 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import {
+    Modal,
+    ModalHeader,
+    ModalTitle,
+    ModalClose,
+    ModalBody,
+    ModalFooter,
+} from "./modal";
+import { Button } from "../button/button";
+import DemoModal from "./demo-modal";
+
+<Meta title="UI/Modal" component={Modal} />
+
+# Modal
+
+<p class="sbdocs-desc">
+    Add dialogs to your site for lightboxes, user notifications, or completely
+    custom content.
+</p>
+
+## Basic Example
+
+Below is the static example of the basic modal.
+
+<Preview withToolbar>
+    <Story name="Basic Example">
+        <>
+            <DemoModal />
+        </>
+    </Story>
+</Preview>
+
+```Javascript
+    const [show, setShow] = useState(false);
+    const clickHandler = () => {
+        setShow((prev) => !prev);
+    };
+    return (
+        <>
+            <Modal show={show}>
+                <ModalHeader>
+                    <ModalTitle>Modal Title</ModalTitle>
+                    <ModalClose>x</ModalClose>
+                </ModalHeader>
+                <ModalBody>
+                    <p>
+                        It is a long established fact that a reader will be
+                        distracted by the readable content of a page when
+                        looking at its layout. The point of using Lorem Ipsum is
+                        that it has a more-or-less normal distribution of
+                        letters, as opposed to using &apos;Content here, content
+                        here&apos;, making it look like readable English.
+                    </p>
+                </ModalBody>
+                <ModalFooter>
+                    <Button color="secondary">Close</Button>
+                    <Button color="primary">Save changes</Button>
+                </ModalFooter>
+            </Modal>
+            <Button onClick={clickHandler}>Open Modal</Button>
+        </>
+    );
+```
+
+## Centered Modal
+
+Below is the static example of the basic modal. Centered default is `true`. If you don't want centered modal then make it false
+
+<Preview withToolbar>
+    <Story name="Centered Modal">
+        <>
+            <DemoModal centered />
+        </>
+    </Story>
+</Preview>
+
+```Javascript
+    const [show, setShow] = useState(false);
+    const clickHandler = () => {
+        setShow((prev) => !prev);
+    };
+    return (
+        <>
+            <Modal show={show} centered>
+                <ModalHeader>
+                    <ModalTitle>Modal Title</ModalTitle>
+                    <ModalClose>x</ModalClose>
+                </ModalHeader>
+                <ModalBody>
+                    <p>
+                        It is a long established fact that a reader will be
+                        distracted by the readable content of a page when
+                        looking at its layout. The point of using Lorem Ipsum is
+                        that it has a more-or-less normal distribution of
+                        letters, as opposed to using &apos;Content here, content
+                        here&apos;, making it look like readable English.
+                    </p>
+                </ModalBody>
+                <ModalFooter>
+                    <Button color="secondary">Close</Button>
+                    <Button color="primary">Save changes</Button>
+                </ModalFooter>
+            </Modal>
+            <Button onClick={clickHandler}>Open Modal</Button>
+        </>
+    );
+```
+
+## Extra Large Modal
+
+Extra Large Sized Modal.
+
+<Preview withToolbar>
+    <Story name="Extra Large Modal">
+        <>
+            <DemoModal size="xl" />
+        </>
+    </Story>
+</Preview>
+
+```Javascript
+    const [show, setShow] = useState(false);
+    const clickHandler = () => {
+        setShow((prev) => !prev);
+    };
+    return (
+        <>
+            <Modal show={show} size="xl">
+                <ModalHeader>
+                    <ModalTitle>Modal Title</ModalTitle>
+                    <ModalClose>x</ModalClose>
+                </ModalHeader>
+                <ModalBody>
+                    <p>
+                        It is a long established fact that a reader will be
+                        distracted by the readable content of a page when
+                        looking at its layout. The point of using Lorem Ipsum is
+                        that it has a more-or-less normal distribution of
+                        letters, as opposed to using &apos;Content here, content
+                        here&apos;, making it look like readable English.
+                    </p>
+                </ModalBody>
+                <ModalFooter>
+                    <Button color="secondary">Close</Button>
+                    <Button color="primary">Save changes</Button>
+                </ModalFooter>
+            </Modal>
+            <Button onClick={clickHandler}>Open Modal</Button>
+        </>
+    );
+```
+
+## Large Modal
+
+Large Sized Modal.
+
+<Preview withToolbar>
+    <Story name="Large Modal">
+        <>
+            <DemoModal size="lg" />
+        </>
+    </Story>
+</Preview>
+
+```Javascript
+    const [show, setShow] = useState(false);
+    const clickHandler = () => {
+        setShow((prev) => !prev);
+    };
+    return (
+        <>
+            <Modal show={show} size="lg">
+                <ModalHeader>
+                    <ModalTitle>Modal Title</ModalTitle>
+                    <ModalClose>x</ModalClose>
+                </ModalHeader>
+                <ModalBody>
+                    <p>
+                        It is a long established fact that a reader will be
+                        distracted by the readable content of a page when
+                        looking at its layout. The point of using Lorem Ipsum is
+                        that it has a more-or-less normal distribution of
+                        letters, as opposed to using &apos;Content here, content
+                        here&apos;, making it look like readable English.
+                    </p>
+                </ModalBody>
+                <ModalFooter>
+                    <Button color="secondary">Close</Button>
+                    <Button color="primary">Save changes</Button>
+                </ModalFooter>
+            </Modal>
+            <Button onClick={clickHandler}>Open Modal</Button>
+        </>
+    );
+```
+
+## Medium Modal
+
+Medium (Default) Sized Modal.
+
+<Preview withToolbar>
+    <Story name="Medium Modal">
+        <>
+            <DemoModal size="lg" />
+        </>
+    </Story>
+</Preview>
+
+```Javascript
+    const [show, setShow] = useState(false);
+    const clickHandler = () => {
+        setShow((prev) => !prev);
+    };
+    return (
+        <>
+            <Modal show={show} size="lg">
+                <ModalHeader>
+                    <ModalTitle>Modal Title</ModalTitle>
+                    <ModalClose>x</ModalClose>
+                </ModalHeader>
+                <ModalBody>
+                    <p>
+                        It is a long established fact that a reader will be
+                        distracted by the readable content of a page when
+                        looking at its layout. The point of using Lorem Ipsum is
+                        that it has a more-or-less normal distribution of
+                        letters, as opposed to using &apos;Content here, content
+                        here&apos;, making it look like readable English.
+                    </p>
+                </ModalBody>
+                <ModalFooter>
+                    <Button color="secondary">Close</Button>
+                    <Button color="primary">Save changes</Button>
+                </ModalFooter>
+            </Modal>
+            <Button onClick={clickHandler}>Open Modal</Button>
+        </>
+    );
+```
+
+## Small Modal
+
+Small Sized Modal.
+
+<Preview withToolbar>
+    <Story name="Small Modal">
+        <>
+            <DemoModal size="sm" />
+        </>
+    </Story>
+</Preview>
+
+```Javascript
+    const [show, setShow] = useState(false);
+    const clickHandler = () => {
+        setShow((prev) => !prev);
+    };
+    return (
+        <>
+            <Modal show={show} size="sm">
+                <ModalHeader>
+                    <ModalTitle>Modal Title</ModalTitle>
+                    <ModalClose>x</ModalClose>
+                </ModalHeader>
+                <ModalBody>
+                    <p>
+                        It is a long established fact that a reader will be
+                        distracted by the readable content of a page when
+                        looking at its layout. The point of using Lorem Ipsum is
+                        that it has a more-or-less normal distribution of
+                        letters, as opposed to using &apos;Content here, content
+                        here&apos;, making it look like readable English.
+                    </p>
+                </ModalBody>
+                <ModalFooter>
+                    <Button color="secondary">Close</Button>
+                    <Button color="primary">Save changes</Button>
+                </ModalFooter>
+            </Modal>
+            <Button onClick={clickHandler}>Open Modal</Button>
+        </>
+    );
+```

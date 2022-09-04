@@ -1,0 +1,115 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+
+import { ButtonGroup, ButtonToolbar } from "./button-group";
+import { Button } from "../button/button";
+
+<Meta title="UI/Button Groups" component={ButtonGroup} />
+
+# Button Group
+
+<p class="sbdocs-desc">
+    Group a series of buttons together on a single line with the button group,
+    and super-power them with javascript.
+</p>
+
+<Canvas>
+    <Story
+        name="Button Group Controls"
+        argTypes={{
+            size: {
+                control: {
+                    type: `select`,
+                    options: ["xs", "sm", "md", "lg"],
+                },
+            },
+            vertical: {
+                control: {
+                    type: `boolean`,
+                },
+            },
+            label: {
+                control: {
+                    type: `text`,
+                },
+            },
+            className: {
+                control: {
+                    type: `text`,
+                },
+            },
+        }}
+    >
+        {(args) => {
+            const { ...restArgs } = args;
+            return (
+                <ButtonGroup {...restArgs}>
+                    <Button color="secondary">General</Button>
+                    <Button color="secondary">Privacy</Button>
+                    <Button color="secondary">Account</Button>
+                </ButtonGroup>
+            );
+        }}
+    </Story>
+</Canvas>
+
+<ArgsTable of={ButtonGroup} story="Button Group Controls" />
+
+## Basic Example
+
+Group a series of buttons together on a single line with the button group.
+
+<Preview withToolbar>
+    <Story name="Basic Example">
+        <ButtonGroup>
+            <Button color="secondary">General</Button>
+            <Button color="secondary">Privacy</Button>
+            <Button color="secondary">Account</Button>
+        </ButtonGroup>
+    </Story>
+</Preview>
+
+## Button Toolbar
+
+Combine sets of button groups into button toolbars for more complex components. Use utility classes as needed to space out groups, buttons, and more.
+
+<Preview withToolbar>
+    <Story name="Button Toolbar">
+        <ButtonToolbar>
+            <ButtonGroup mr="10px">
+                <Button color="secondary">1</Button>
+                <Button color="secondary">2</Button>
+                <Button color="secondary">3</Button>
+                <Button color="secondary">4</Button>
+            </ButtonGroup>
+            <ButtonGroup mr="10px">
+                <Button color="secondary">5</Button>
+                <Button color="secondary">6</Button>
+                <Button color="secondary">7</Button>
+            </ButtonGroup>
+            <ButtonGroup>
+                <Button color="secondary">8</Button>
+            </ButtonGroup>
+        </ButtonToolbar>
+    </Story>
+</Preview>
+
+## Vertical Variation
+
+Make a set of buttons appear vertically stacked rather than horizontally. Split button dropdowns are not supported here.
+
+<Preview withToolbar>
+    <Story name="Vertical Variation">
+        <ButtonGroup vertical={true}>
+            <Button color="secondary">1</Button>
+            <Button color="secondary">2</Button>
+            <Button color="secondary">3</Button>
+            <Button color="secondary">4</Button>
+        </ButtonGroup>
+    </Story>
+</Preview>

@@ -1,0 +1,474 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+import { Table } from "./table";
+
+<Meta title="UI/Table" component={Table} />
+
+# Table
+
+<p class="sbdocs-desc">
+    Documentation and examples for opt-in styling of tables
+</p>
+
+## Basic Example
+
+Using the most basic table markup, here’s how `Table` based tables look in Bootstrap. All table styles are inherited in Bootstrap 4, meaning any nested tables will be styled in the same manner as the parent.
+
+<Preview withToolbar>
+    <Story name="Basic Example">
+        <Table>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Job Title</th>
+                    <th scope="col">Degree</th>
+                    <th scope="col">Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Adrian Monino</td>
+                    <td>Front-End Engineer</td>
+                    <td>Computer Science</td>
+                    <td>$120,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Socrates Itumay</td>
+                    <td>Software Engineer</td>
+                    <td>Computer Engineering</td>
+                    <td>$150,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Reynante Labares</td>
+                    <td>Product Manager</td>
+                    <td>Business Management</td>
+                    <td>$250,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Hamza Macasindil</td>
+                    <td>Software Engineer</td>
+                    <td>Computer Engineering</td>
+                    <td>$140,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Roven Galeon</td>
+                    <td>Project Manager</td>
+                    <td>Accountancy</td>
+                    <td>$160,000</td>
+                </tr>
+            </tbody>
+        </Table>
+    </Story>
+</Preview>
+
+## Table Head Options
+
+use the `theadColor` props to make colored thead.
+Color options are: `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light`, `dark`
+
+<Preview withToolbar>
+    <Story name="Table Head Options">
+        <Table theadColor="primary">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Job Title</th>
+                    <th scope="col">Degree</th>
+                    <th scope="col">Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Adrian Monino</td>
+                    <td>Front-End Engineer</td>
+                    <td>Computer Science</td>
+                    <td>$120,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Socrates Itumay</td>
+                    <td>Software Engineer</td>
+                    <td>Computer Engineering</td>
+                    <td>$150,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Reynante Labares</td>
+                    <td>Product Manager</td>
+                    <td>Business Management</td>
+                    <td>$250,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Hamza Macasindil</td>
+                    <td>Software Engineer</td>
+                    <td>Computer Engineering</td>
+                    <td>$140,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Roven Galeon</td>
+                    <td>Project Manager</td>
+                    <td>Accountancy</td>
+                    <td>$160,000</td>
+                </tr>
+            </tbody>
+        </Table>
+    </Story>
+</Preview>
+
+## Striped Rows
+
+Use `striped` props to add zebra-striping to any table row within the tbody.
+
+<Preview withToolbar>
+    <Story name="Striped Rows">
+        <Table striped={true}>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Job Title</th>
+                    <th scope="col">Degree</th>
+                    <th scope="col">Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Adrian Monino</td>
+                    <td>Front-End Engineer</td>
+                    <td>Computer Science</td>
+                    <td>$120,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Socrates Itumay</td>
+                    <td>Software Engineer</td>
+                    <td>Computer Engineering</td>
+                    <td>$150,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Reynante Labares</td>
+                    <td>Product Manager</td>
+                    <td>Business Management</td>
+                    <td>$250,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Hamza Macasindil</td>
+                    <td>Software Engineer</td>
+                    <td>Computer Engineering</td>
+                    <td>$140,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Roven Galeon</td>
+                    <td>Project Manager</td>
+                    <td>Accountancy</td>
+                    <td>$160,000</td>
+                </tr>
+            </tbody>
+        </Table>
+    </Story>
+</Preview>
+
+## Bordered Table
+
+Add `bordered` for borders on all sides of the table and cells.
+
+<Preview withToolbar>
+    <Story name="Bordered Table">
+        <Table bordered={true}>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Job Title</th>
+                    <th scope="col">Degree</th>
+                    <th scope="col">Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Adrian Monino</td>
+                    <td>Front-End Engineer</td>
+                    <td>Computer Science</td>
+                    <td>$120,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Socrates Itumay</td>
+                    <td>Software Engineer</td>
+                    <td>Computer Engineering</td>
+                    <td>$150,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Reynante Labares</td>
+                    <td>Product Manager</td>
+                    <td>Business Management</td>
+                    <td>$250,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Hamza Macasindil</td>
+                    <td>Software Engineer</td>
+                    <td>Computer Engineering</td>
+                    <td>$140,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Roven Galeon</td>
+                    <td>Project Manager</td>
+                    <td>Accountancy</td>
+                    <td>$160,000</td>
+                </tr>
+            </tbody>
+        </Table>
+    </Story>
+</Preview>
+
+## Borderless Table
+
+Add `borderless` for borders on all sides of the table and cells.
+
+<Preview withToolbar>
+    <Story name="Borderless Table">
+        <Table borderless={true}>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Job Title</th>
+                    <th scope="col">Degree</th>
+                    <th scope="col">Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Adrian Monino</td>
+                    <td>Front-End Engineer</td>
+                    <td>Computer Science</td>
+                    <td>$120,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Socrates Itumay</td>
+                    <td>Software Engineer</td>
+                    <td>Computer Engineering</td>
+                    <td>$150,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Reynante Labares</td>
+                    <td>Product Manager</td>
+                    <td>Business Management</td>
+                    <td>$250,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Hamza Macasindil</td>
+                    <td>Software Engineer</td>
+                    <td>Computer Engineering</td>
+                    <td>$140,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Roven Galeon</td>
+                    <td>Project Manager</td>
+                    <td>Accountancy</td>
+                    <td>$160,000</td>
+                </tr>
+            </tbody>
+        </Table>
+    </Story>
+</Preview>
+
+## Hoverable Rows
+
+Add `hover` to enable a hover state on table rows within a tbody.
+
+<Preview withToolbar>
+    <Story name="Hoverable Rows">
+        <Table hover={true}>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Job Title</th>
+                    <th scope="col">Degree</th>
+                    <th scope="col">Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Adrian Monino</td>
+                    <td>Front-End Engineer</td>
+                    <td>Computer Science</td>
+                    <td>$120,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Socrates Itumay</td>
+                    <td>Software Engineer</td>
+                    <td>Computer Engineering</td>
+                    <td>$150,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Reynante Labares</td>
+                    <td>Product Manager</td>
+                    <td>Business Management</td>
+                    <td>$250,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Hamza Macasindil</td>
+                    <td>Software Engineer</td>
+                    <td>Computer Engineering</td>
+                    <td>$140,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Roven Galeon</td>
+                    <td>Project Manager</td>
+                    <td>Accountancy</td>
+                    <td>$160,000</td>
+                </tr>
+            </tbody>
+        </Table>
+    </Story>
+</Preview>
+
+## Compact Table
+
+Add `compact` to make tables more compact by cutting cell padding in half.
+
+<Preview withToolbar>
+    <Story name="Compact Table">
+        <Table compact={true}>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Job Title</th>
+                    <th scope="col">Degree</th>
+                    <th scope="col">Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Adrian Monino</td>
+                    <td>Front-End Engineer</td>
+                    <td>Computer Science</td>
+                    <td>$120,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Socrates Itumay</td>
+                    <td>Software Engineer</td>
+                    <td>Computer Engineering</td>
+                    <td>$150,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Reynante Labares</td>
+                    <td>Product Manager</td>
+                    <td>Business Management</td>
+                    <td>$250,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Hamza Macasindil</td>
+                    <td>Software Engineer</td>
+                    <td>Computer Engineering</td>
+                    <td>$140,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Roven Galeon</td>
+                    <td>Project Manager</td>
+                    <td>Accountancy</td>
+                    <td>$160,000</td>
+                </tr>
+            </tbody>
+        </Table>
+    </Story>
+</Preview>
+
+## Colored Variations
+
+Use contextual classes to color entire table.
+Color options are: `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light`, `dark`
+
+<Preview withToolbar>
+    <Story name="Colored Variations">
+        <Table color="secondary" hover={true} striped={true}>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Job Title</th>
+                    <th scope="col">Degree</th>
+                    <th scope="col">Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Adrian Monino</td>
+                    <td>Front-End Engineer</td>
+                    <td>Computer Science</td>
+                    <td>$120,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Socrates Itumay</td>
+                    <td>Software Engineer</td>
+                    <td>Computer Engineering</td>
+                    <td>$150,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Reynante Labares</td>
+                    <td>Product Manager</td>
+                    <td>Business Management</td>
+                    <td>$250,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Hamza Macasindil</td>
+                    <td>Software Engineer</td>
+                    <td>Computer Engineering</td>
+                    <td>$140,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Roven Galeon</td>
+                    <td>Project Manager</td>
+                    <td>Accountancy</td>
+                    <td>$160,000</td>
+                </tr>
+            </tbody>
+        </Table>
+    </Story>
+</Preview>

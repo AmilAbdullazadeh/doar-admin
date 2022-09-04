@@ -1,0 +1,142 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+import { VectorMap } from "./vector-map";
+import usa from "@doar/shared/data/maps/usa.json";
+
+<Meta title="Maps/Vector Maps" component={VectorMap} />
+
+## Vector Maps
+
+<p class="sbdocs-desc">
+    A React component for creating simple maps with interactive elements, 100+
+    maps ready for use and an online SVG to JSON converter for creating new
+    maps. Read the{" "}
+    <a
+        href="https://react-vector-maps.netlify.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Official React Vector Maps Documentation
+    </a>{" "}
+    for a full list of instructions and other options.{" "}
+    <a
+        href="https://react-vector-maps.netlify.app/maps"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Visit here to get Map's data
+    </a>{" "}
+    Pass this data to VectorMap by <b>data</b> props.
+</p>
+
+<Canvas>
+    <Story
+        name="Map Controls"
+        argTypes={{
+            backgroundColor: {
+                control: {
+                    type: `color`,
+                },
+            },
+            borderColor: {
+                control: {
+                    type: `color`,
+                },
+            },
+            color: {
+                control: {
+                    type: `color`,
+                },
+            },
+            checkedLayers: {
+                control: false,
+            },
+            selectedColor: {
+                control: {
+                    type: `color`,
+                },
+            },
+            tooltip: {
+                table: { disable: true },
+            },
+            data: {
+                control: false,
+            },
+        }}
+    >
+        {(args) => {
+            const { ...restArgs } = args;
+            return <VectorMap {...restArgs} />;
+        }}
+    </Story>
+</Canvas>
+
+<ArgsTable className="vector-map" of={VectorMap} story="Map Controls" />
+
+## Vector map: World
+
+Below is a basic example of displaying the world map.
+
+<Preview withToolbar>
+    <Story name="Basic Map">
+        <VectorMap width="70%" height={["300px", "400px"]} color="#8392a5" />
+    </Story>
+</Preview>
+
+## Tooltip
+
+Below is a basic example of displaying the world map.
+
+<Preview withToolbar>
+    <Story name="Tooltip">
+        <VectorMap width="70%" height={["300px", "400px"]} tooltip={true} />
+    </Story>
+</Preview>
+
+## Map by Country
+
+In this example, we are showing map of the United States.
+
+<Preview withToolbar>
+    <Story name="Map by Country">
+        <VectorMap width="70%" height={["300px", "400px"]} data={usa} />
+    </Story>
+</Preview>
+
+## Selected Region
+
+In this example, we are showing pre selected region in country of United States.
+
+<Preview withToolbar>
+    <Story name="Selected Region">
+        <VectorMap
+            width="70%"
+            height={["300px", "400px"]}
+            data={usa}
+            selectedColor="#0168fa"
+            checkedLayers={[
+                "us-nm",
+                "us-nv",
+                "us-ca",
+                "us-ut",
+                "us-az",
+                "us-tx",
+                "us-co",
+                "us-ks",
+                "us-ok",
+                "us-mo",
+                "us-ar",
+                "us-la",
+                "us-ms",
+                "us-al",
+                "us-ga",
+                "us-fl",
+            ]}
+        />
+    </Story>
+</Preview>

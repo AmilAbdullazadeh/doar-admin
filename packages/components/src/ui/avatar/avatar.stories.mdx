@@ -1,0 +1,155 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+
+import { Avatar, AvatarInitial } from "./avatar";
+import image from "../../static/img1.png";
+
+<Meta title="UI/Avatar" component={Avatar} />
+
+# Overview
+
+Avatars are user's face image that you can use throughout the design from tables to dialog or menus with options for sizes and shapes.
+
+<Canvas>
+    <Story
+        name="Avatar Controls"
+        argTypes={{
+            size: {
+                control: {
+                    type: `select`,
+                    options: ["default", "xs", "sm", "md", "lg", "xl", "xxl"],
+                },
+            },
+            shape: {
+                control: {
+                    type: `select`,
+                    options: ["circle", "rounded", "square"],
+                },
+            },
+            status: {
+                control: {
+                    type: `inline-radio`,
+                    options: ["online", "offline"],
+                },
+            },
+            clasName: {
+                control: {
+                    type: `text`,
+                },
+            },
+        }}
+        args={{
+            size: `default`,
+            shape: `circle`,
+        }}
+    >
+        {(args) => {
+            const { ...restArgs } = args;
+            return (
+                <Avatar {...restArgs}>
+                    <img src={image} />
+                </Avatar>
+            );
+        }}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Avatar} story="Avatar Controls" />
+
+## Sizes
+
+An avatar can have different sizes like larger and smaller avatar.
+
+<Preview withToolbar>
+    <Story name="Sizes">
+        <Avatar size="xs" shape="circle">
+            <img src={image} />
+        </Avatar>
+        <Avatar size="sm" shape="circle">
+            <img src={image} />
+        </Avatar>
+        <Avatar shape="circle">
+            <img src={image} />
+        </Avatar>
+        <Avatar size="md" shape="circle">
+            <img src={image} />
+        </Avatar>
+        <Avatar size="lg" shape="circle">
+            <img src={image} />
+        </Avatar>
+        <Avatar size="xl" shape="circle">
+            <img src={image} />
+        </Avatar>
+        <Avatar size="xxl" shape="circle">
+            <img src={image} />
+        </Avatar>
+    </Story>
+</Preview>
+
+## Shapes
+
+An avatar can have different shapes like rounded and circle avatar.
+
+<Preview withToolbar>
+    <Story name="shapes">
+        <Avatar size="lg" shape="circle">
+            <img src={image} />
+        </Avatar>
+        <Avatar size="lg" shape="rounded">
+            <img src={image} />
+        </Avatar>
+        <Avatar size="lg" shape="square">
+            <img src={image} />
+        </Avatar>
+    </Story>
+</Preview>
+
+## Initials
+
+An avatar can have a temporary use of user's initial name while their photos are not yet available.
+
+<Preview withToolbar>
+    <Story name="Initials">
+        <Avatar size="xs" shape="circle">
+            <AvatarInitial>df</AvatarInitial>
+        </Avatar>
+        <Avatar size="sm" shape="circle">
+            <AvatarInitial>df</AvatarInitial>
+        </Avatar>
+        <Avatar shape="circle">
+            <AvatarInitial>df</AvatarInitial>
+        </Avatar>
+        <Avatar size="md" shape="circle">
+            <AvatarInitial>df</AvatarInitial>
+        </Avatar>
+        <Avatar size="lg" shape="circle">
+            <AvatarInitial>df</AvatarInitial>
+        </Avatar>
+        <Avatar size="xl" shape="circle">
+            <AvatarInitial>df</AvatarInitial>
+        </Avatar>
+        <Avatar size="xxl" shape="circle">
+            <AvatarInitial>df</AvatarInitial>
+        </Avatar>
+    </Story>
+</Preview>
+
+## Status Indicator
+
+An avatar can have a status indicator to indicate users availability.
+
+<Preview withToolbar>
+    <Story name="Status Indicator">
+        <Avatar size="lg" shape="circle" status="online">
+            <img src={image} />
+        </Avatar>
+        <Avatar size="lg" shape="circle" status="offline">
+            <AvatarInitial>df</AvatarInitial>
+        </Avatar>
+    </Story>
+</Preview>

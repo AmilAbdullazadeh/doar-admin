@@ -1,0 +1,171 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+
+import { Image, ImageGroup } from "./image";
+import exmaplImage from "../../static/img1.png";
+
+<Meta title="UI/Images" component={Image} />
+
+# Images
+
+<p class="sbdocs-desc">
+    Documentation and examples for opting images into responsive behavior (so
+    they never become larger than their parent elements) and add lightweight
+    styles to them—all via classes.
+</p>
+
+<Canvas>
+    <Story
+        name="Image Controls"
+        argTypes={{
+            src: {
+                control: {
+                    type: `text`,
+                },
+            },
+            alt: {
+                control: {
+                    type: `text`,
+                },
+            },
+            shape: {
+                control: {
+                    type: `select`,
+                    options: ["rounded", "circle", "thumbnail"],
+                },
+            },
+            fluid: {
+                control: {
+                    type: `boolean`,
+                },
+            },
+            align: {
+                control: {
+                    type: `select`,
+                    options: ["left", "right"],
+                },
+            },
+            fit: {
+                control: {
+                    type: `select`,
+                    options: ["cover", "contain"],
+                },
+            },
+            className: {
+                control: {
+                    type: `text`,
+                },
+            },
+        }}
+    >
+        {(args) => {
+            const { ...restArgs } = args;
+            return <Image src={exmaplImage} alt="example" {...restArgs} />;
+        }}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Image} story="Image Controls" />
+
+## Responsive Images
+
+Images in Bootstrap are made responsive with `fluid`. max-width: 100%; and height: auto; are applied to the image so that it scales with the parent element.
+
+<Preview withToolbar>
+    <Story name="Responsive Images">
+        <Image src={exmaplImage} alt="Responsive Images" fluid />
+    </Story>
+</Preview>
+
+## Image Thumbnails
+
+In addition to our border-radius utilities, you can use `thumbnail` to give an image a rounded 1px border appearance.
+
+<Preview withToolbar>
+    <Story name="Image Thumbnails">
+        <Image src={exmaplImage} alt="Image Thumbnails" shape="thumbnail" />
+    </Story>
+</Preview>
+
+## Aligning Images
+
+Align images with the helper `align` props.
+
+<Preview withToolbar>
+    <Story name="Aligning Images">
+        <div className="clearfix ov-hidden">
+            <Image
+                src={exmaplImage}
+                alt="Image Thumbnails"
+                shape="thumbnail"
+                align="left"
+                width={200}
+            />
+            <Image
+                src={exmaplImage}
+                alt="Image Thumbnails"
+                shape="thumbnail"
+                align="right"
+                width={200}
+            />
+        </div>
+    </Story>
+</Preview>
+
+## Image Group
+
+This is a group of images overlapping each other.
+
+<Preview withToolbar>
+    <Story name="Image Group">
+        <ImageGroup>
+            <Image
+                src={exmaplImage}
+                alt="group"
+                shape="circle"
+                width={60}
+                height={60}
+            />
+            <Image
+                src={exmaplImage}
+                alt="group"
+                shape="circle"
+                width={60}
+                height={60}
+            />
+            <Image
+                src={exmaplImage}
+                alt="group"
+                shape="circle"
+                width={60}
+                height={60}
+            />
+            <Image
+                src={exmaplImage}
+                alt="group"
+                shape="circle"
+                width={60}
+                height={60}
+            />
+            <Image
+                src={exmaplImage}
+                alt="group"
+                shape="circle"
+                width={60}
+                height={60}
+            />
+            <Image
+                src={exmaplImage}
+                alt="group"
+                shape="circle"
+                width={60}
+                height={60}
+            />
+        </ImageGroup>
+    </Story>
+</Preview>

@@ -1,0 +1,123 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+
+import { Badge } from "./badge";
+
+<Meta title="UI/Badge" component={Badge} />
+
+# Badges
+
+<p class="sbdocs-desc">
+    Documentation and examples for badges, our small count and labeling
+    component
+</p>
+
+<Canvas>
+    <Story
+        name="Badge Controls"
+        argTypes={{
+            color: {
+                control: {
+                    type: `select`,
+                    options: [
+                        "primary",
+                        "secondary",
+                        "success",
+                        "danger",
+                        "warning",
+                        "info",
+                        "light",
+                        "dark",
+                    ],
+                },
+            },
+            variant: {
+                control: {
+                    type: `select`,
+                    options: ["contained", "texted"],
+                },
+            },
+            shape: {
+                control: {
+                    type: `select`,
+                    options: ["rounded", "square", "circle"],
+                },
+            },
+            pill: {
+                control: {
+                    type: `boolean`,
+                },
+            },
+            className: {
+                control: {
+                    type: `string`,
+                },
+            },
+        }}
+        args={{
+            children: `Badge`,
+        }}
+    >
+        {(args) => {
+            const { children, ...restArgs } = args;
+            return <Badge {...restArgs}>{children}</Badge>;
+        }}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Badge} story="Badge Controls" />
+
+## Contextual Variations
+
+Add any of the below mentioned modifier classes to change the appearance of a badge.
+
+<Preview withToolbar>
+    <Story name="Contextual Variations">
+        <Badge color="primary">Primary</Badge>
+        <Badge color="secondary">Secondary</Badge>
+        <Badge color="success">Success</Badge>
+        <Badge color="danger">Danger</Badge>
+        <Badge color="warning">Warning</Badge>
+        <Badge color="info">Info</Badge>
+        <Badge color="light">Light</Badge>
+        <Badge color="dark">Dark</Badge>
+    </Story>
+</Preview>
+
+## Pill Badges
+
+Use the `pill` props class to make badges more rounded.
+
+<Preview withToolbar>
+    <Story name="Pill Badges">
+        <Badge color="primary" pill>
+            Primary
+        </Badge>
+        <Badge color="secondary" pill>
+            Secondary
+        </Badge>
+        <Badge color="success" pill>
+            Success
+        </Badge>
+        <Badge color="danger" pill>
+            Danger
+        </Badge>
+        <Badge color="warning" pill>
+            Warning
+        </Badge>
+        <Badge color="info" pill>
+            Info
+        </Badge>
+        <Badge color="light" pill>
+            Light
+        </Badge>
+        <Badge color="dark" pill>
+            Dark
+        </Badge>
+    </Story>
+</Preview>

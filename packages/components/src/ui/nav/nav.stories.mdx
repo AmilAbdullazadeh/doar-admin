@@ -1,0 +1,207 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+import { Nav, NavLink, NavDivider } from "./nav";
+import { Badge } from "../badge/badge";
+import { Camera, Facebook, Twitter, Linkedin } from "react-feather";
+
+<Meta title="UI/Navs" component={Nav} />
+
+# Navs
+
+<p class="sbdocs-desc">
+    Documentation and examples for how to use navigation components.
+</p>
+
+## Basic Example
+
+The base `Nav` component to the active and disabled states. Swap modifier props to switch between each style.
+
+<Preview withToolbar>
+    <Story name="Basic Example">
+        <Nav>
+            <NavLink path="#!" active>
+                Home
+            </NavLink>
+            <NavLink path="#!">About</NavLink>
+            <NavLink path="#!">Contact</NavLink>
+        </Nav>
+    </Story>
+</Preview>
+
+## Horizontal Alignment
+
+Change the horizontal alignment of your nav with `align` props. By default, navs are left-aligned, but you can easily change them to center or right aligned.
+
+<Preview withToolbar>
+    <Story name="Horizontal Alignment">
+        <Nav align="center">
+            <NavLink path="#!" active>
+                Home
+            </NavLink>
+            <NavLink path="#!">About</NavLink>
+            <NavLink path="#!">Contact</NavLink>
+        </Nav>
+        <Nav align="right">
+            <NavLink path="#!" active>
+                Home
+            </NavLink>
+            <NavLink path="#!">About</NavLink>
+            <NavLink path="#!">Contact</NavLink>
+        </Nav>
+    </Story>
+</Preview>
+
+## Vertical Nav
+
+Stack your navigation by passing `vertical` props
+
+<Preview withToolbar>
+    <Story name="Vertical Nav">
+        <Nav vertical>
+            <NavLink path="#!" active>
+                Home
+            </NavLink>
+            <NavLink path="#!">About</NavLink>
+            <NavLink path="#!">Contact</NavLink>
+        </Nav>
+    </Story>
+</Preview>
+
+## Pills
+
+Take that same HTML, but pass `pills` props to it. Same goes to vertical nav.
+
+<Preview withToolbar>
+    <Story name="Pills">
+        <Nav pills>
+            <NavLink path="#!" active>
+                Home
+            </NavLink>
+            <NavLink path="#!">About</NavLink>
+            <NavLink path="#!">Contact</NavLink>
+        </Nav>
+    </Story>
+</Preview>
+
+## Fill & Justify
+
+Force your nav’s contents to extend the full available width one of two modifier classes.
+
+<Preview withToolbar>
+    <Story name="Fill & Justify">
+        <Nav pills fill>
+            <NavLink path="#!" active>
+                Home
+            </NavLink>
+            <NavLink path="#!">About</NavLink>
+            <NavLink path="#!">Contact</NavLink>
+        </Nav>
+    </Story>
+</Preview>
+
+## Nav Classic
+
+<Preview withToolbar>
+    <Story name="Nav Classic">
+        <Nav customStyle="classic">
+            <NavLink path="#!" active>
+                <span>Home</span>
+                <Badge>3</Badge>
+            </NavLink>
+            <NavLink path="#!">
+                <span>About</span>
+                <Badge>4</Badge>
+            </NavLink>
+            <NavLink path="#!">
+                <span>Contact</span>
+                <Badge>5</Badge>
+            </NavLink>
+        </Nav>
+    </Story>
+</Preview>
+
+## Nav Icon
+
+<Preview withToolbar>
+    <Story name="Nav Icon">
+        <Nav customStyle="icon">
+            <NavLink path="#!" active>
+                <Camera />
+            </NavLink>
+            <NavLink path="#!">
+                <Twitter />
+            </NavLink>
+        </Nav>
+    </Story>
+</Preview>
+
+## Nav Line
+
+<Preview withToolbar>
+    <Story name="Nav Line">
+        <Nav customStyle="line">
+            <NavLink path="#!" active>
+                Home
+            </NavLink>
+            <NavLink path="#!">About</NavLink>
+            <NavLink path="#!">Contact</NavLink>
+        </Nav>
+    </Story>
+</Preview>
+
+## Nav Sidebar
+
+<Preview withToolbar>
+    <Story name="Nav Sidebar">
+        <Nav customStyle="sidebar">
+            <NavLink path="#!" active>
+                Home
+                <Badge>4</Badge>
+            </NavLink>
+            <NavLink path="#!">About</NavLink>
+            <NavLink path="#!">Contact</NavLink>
+        </Nav>
+    </Story>
+</Preview>
+
+## Nav Social
+
+<Preview withToolbar>
+    <Story name="Nav Social">
+        <Nav customStyle="social">
+            <NavLink path="https://facebook.com" rel="noopener">
+                <Facebook />
+            </NavLink>
+            <NavLink path="https://twitter.com">
+                <Twitter />
+            </NavLink>
+            <NavLink path="https://linkedin.com">
+                <Linkedin />
+            </NavLink>
+        </Nav>
+    </Story>
+</Preview>
+
+## Nav With Icon
+
+<Preview withToolbar>
+    <Story name="Nav With Icon">
+        <Nav customStyle="with-icon">
+            <NavLink path="#!" active iconPosition="right">
+                Home
+                <Facebook />
+            </NavLink>
+            <NavLink path="#!" iconPosition="right">
+                About <Twitter />
+            </NavLink>
+            <NavLink path="#!" iconPosition="right">
+                Contact <Linkedin />
+            </NavLink>
+        </Nav>
+    </Story>
+</Preview>

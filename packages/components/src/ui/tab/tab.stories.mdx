@@ -1,0 +1,255 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+
+import { TabWrap, TabList, Tab, TabPanel, TabContent } from "./tab";
+
+<Meta title="UI/Tab" />
+
+# Tab
+
+<p class="sbdocs-desc">
+    Use the Bootstrap tab javascript plugin to extend navigational tabs and
+    pills to create tabbable panes of local content
+</p>
+
+## Basic Example
+
+The basic tab component consists of links, that are aligned horizontally.
+
+<Preview withToolbar>
+    <Story name="Basic Example">
+        <TabWrap>
+            <TabList>
+                <Tab>Home</Tab>
+                <Tab>Profile</Tab>
+                <Tab>Contact</Tab>
+            </TabList>
+            <TabContent>
+                <TabPanel>
+                    <h6>Home</h6>
+                    <p>
+                        Et et consectetur ipsum labore excepteur est proident
+                        excepteur ad velit occaecat qui minim occaecat veniam.
+                        Exercitation mollit sit culpa nisi culpa non adipisicing
+                        reprehenderit do dolore.
+                    </p>
+                </TabPanel>
+                <TabPanel>
+                    <h6>Profile</h6>
+                    <p>
+                        Et et consectetur ipsum labore excepteur est proident
+                        excepteur ad velit occaecat qui minim occaecat veniam.
+                        Exercitation mollit sit culpa nisi culpa non adipisicing
+                        reprehenderit do dolore.
+                    </p>
+                </TabPanel>
+                <TabPanel>
+                    <h6>Contact</h6>
+                    <p>
+                        Et et consectetur ipsum labore excepteur est proident
+                        excepteur ad velit occaecat qui minim occaecat veniam.
+                        Exercitation mollit sit culpa nisi culpa non adipisicing
+                        reprehenderit do dolore.
+                    </p>
+                </TabPanel>
+            </TabContent>
+        </TabWrap>
+    </Story>
+</Preview>
+
+## Disabled State
+
+The basic tab component with some item is set to disabled.
+
+<Preview withToolbar>
+    <Story name="Disabled State">
+        <TabWrap>
+            <TabList>
+                <Tab>Home</Tab>
+                <Tab>Profile</Tab>
+                <Tab disabled>Contact</Tab>
+            </TabList>
+            <TabContent>
+                <TabPanel>
+                    <h6>Home</h6>
+                    <p>
+                        Et et consectetur ipsum labore excepteur est proident
+                        excepteur ad velit occaecat qui minim occaecat veniam.
+                        Exercitation mollit sit culpa nisi culpa non adipisicing
+                        reprehenderit do dolore.
+                    </p>
+                </TabPanel>
+                <TabPanel>
+                    <h6>Profile</h6>
+                    <p>
+                        Et et consectetur ipsum labore excepteur est proident
+                        excepteur ad velit occaecat qui minim occaecat veniam.
+                        Exercitation mollit sit culpa nisi culpa non adipisicing
+                        reprehenderit do dolore.
+                    </p>
+                </TabPanel>
+                <TabPanel>
+                    <h6>Contact</h6>
+                    <p>
+                        Et et consectetur ipsum labore excepteur est proident
+                        excepteur ad velit occaecat qui minim occaecat veniam.
+                        Exercitation mollit sit culpa nisi culpa non adipisicing
+                        reprehenderit do dolore.
+                    </p>
+                </TabPanel>
+            </TabContent>
+        </TabWrap>
+    </Story>
+</Preview>
+
+## Justified
+
+The tab component that fills the whole width of the parent element having an equal width to each tab item.
+
+<Preview withToolbar>
+    <Story name="Justified">
+        <TabWrap justified>
+            <TabList>
+                <Tab>Home</Tab>
+                <Tab>Profile</Tab>
+                <Tab>Contact</Tab>
+            </TabList>
+            <TabContent>
+                <TabPanel>
+                    <h6>Home</h6>
+                    <p>
+                        Et et consectetur ipsum labore excepteur est proident
+                        excepteur ad velit occaecat qui minim occaecat veniam.
+                        Exercitation mollit sit culpa nisi culpa non adipisicing
+                        reprehenderit do dolore.
+                    </p>
+                </TabPanel>
+                <TabPanel>
+                    <h6>Profile</h6>
+                    <p>
+                        Et et consectetur ipsum labore excepteur est proident
+                        excepteur ad velit occaecat qui minim occaecat veniam.
+                        Exercitation mollit sit culpa nisi culpa non adipisicing
+                        reprehenderit do dolore.
+                    </p>
+                </TabPanel>
+                <TabPanel>
+                    <h6>Contact</h6>
+                    <p>
+                        Et et consectetur ipsum labore excepteur est proident
+                        excepteur ad velit occaecat qui minim occaecat veniam.
+                        Exercitation mollit sit culpa nisi culpa non adipisicing
+                        reprehenderit do dolore.
+                    </p>
+                </TabPanel>
+            </TabContent>
+        </TabWrap>
+    </Story>
+</Preview>
+
+## Vertical
+
+The tab component that display vertically.
+
+<Preview withToolbar>
+    <Story name="Vertical">
+        <TabWrap vertical>
+            <TabList>
+                <Tab>Home</Tab>
+                <Tab>Profile</Tab>
+                <Tab>Contact</Tab>
+            </TabList>
+            <TabContent>
+                <TabPanel>
+                    <h6>Home</h6>
+                    <p>
+                        Et et consectetur ipsum labore excepteur est proident
+                        excepteur ad velit occaecat qui minim occaecat veniam.
+                        Exercitation mollit sit culpa nisi culpa non adipisicing
+                        reprehenderit do dolore. velit occaecat qui minim
+                        occaecat veniam. Exercitation mollit sit culpa nisi
+                        culpa non adipisicing reprehenderit do dolore.
+                    </p>
+                </TabPanel>
+                <TabPanel>
+                    <h6>Profile</h6>
+                    <p>
+                        Et et consectetur ipsum labore excepteur est proident
+                        excepteur ad velit occaecat qui minim occaecat veniam.
+                        Exercitation mollit sit culpa nisi culpa non adipisicing
+                        reprehenderit do dolore.velit occaecat qui minim
+                        occaecat veniam. Exercitation mollit sit culpa nisi
+                        culpa non adipisicing reprehenderit do dolore.
+                    </p>
+                </TabPanel>
+                <TabPanel>
+                    <h6>Contact</h6>
+                    <p>
+                        Et et consectetur ipsum labore excepteur est proident
+                        excepteur ad velit occaecat qui minim occaecat veniam.
+                        Exercitation mollit sit culpa nisi culpa non adipisicing
+                        reprehenderit do dolore.velit occaecat qui minim
+                        occaecat veniam. Exercitation mollit sit culpa nisi
+                        culpa non adipisicing reprehenderit do dolore.
+                    </p>
+                </TabPanel>
+            </TabContent>
+        </TabWrap>
+    </Story>
+</Preview>
+
+## Variation
+
+The tab component that display vertically.
+
+<Preview withToolbar>
+    <Story name="Variation">
+        <TabWrap variation="line">
+            <TabList>
+                <Tab>Home</Tab>
+                <Tab>Profile</Tab>
+                <Tab>Contact</Tab>
+            </TabList>
+            <TabContent>
+                <TabPanel>
+                    <h6>Home</h6>
+                    <p>
+                        Et et consectetur ipsum labore excepteur est proident
+                        excepteur ad velit occaecat qui minim occaecat veniam.
+                        Exercitation mollit sit culpa nisi culpa non adipisicing
+                        reprehenderit do dolore. velit occaecat qui minim
+                        occaecat veniam. Exercitation mollit sit culpa nisi
+                        culpa non adipisicing reprehenderit do dolore.
+                    </p>
+                </TabPanel>
+                <TabPanel>
+                    <h6>Profile</h6>
+                    <p>
+                        Et et consectetur ipsum labore excepteur est proident
+                        excepteur ad velit occaecat qui minim occaecat veniam.
+                        Exercitation mollit sit culpa nisi culpa non adipisicing
+                        reprehenderit do dolore.velit occaecat qui minim
+                        occaecat veniam. Exercitation mollit sit culpa nisi
+                        culpa non adipisicing reprehenderit do dolore.
+                    </p>
+                </TabPanel>
+                <TabPanel>
+                    <h6>Contact</h6>
+                    <p>
+                        Et et consectetur ipsum labore excepteur est proident
+                        excepteur ad velit occaecat qui minim occaecat veniam.
+                        Exercitation mollit sit culpa nisi culpa non adipisicing
+                        reprehenderit do dolore.velit occaecat qui minim
+                        occaecat veniam. Exercitation mollit sit culpa nisi
+                        culpa non adipisicing reprehenderit do dolore.
+                    </p>
+                </TabPanel>
+            </TabContent>
+        </TabWrap>
+    </Story>
+</Preview>

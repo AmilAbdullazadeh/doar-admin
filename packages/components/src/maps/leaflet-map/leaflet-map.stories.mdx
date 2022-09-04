@@ -1,0 +1,112 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+
+import {
+    LeafletMap,
+    LeafletMarker,
+    LeafletPopup,
+    LeafletCircle,
+} from "./leaflet-map";
+
+<Meta title="Maps/Leaflet Maps" component={LeafletMap} />
+
+## Leaflet Maps
+
+<p class="sbdocs-desc">
+    React leaflet is designed with simplicity, performance and usability in
+    mind. It works efficiently across all major desktop and mobile platforms.
+    Read the
+    <a
+        href="https://react-leaflet.js.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Official Leaflet Documentation
+    </a> for a full list of instructions and other options.
+</p>
+
+<Canvas>
+    <Story
+        name="Map Controls"
+        argTypes={{
+            scrollWheelZoom: {
+                control: {
+                    type: `boolean`,
+                },
+            },
+        }}
+    >
+        {(args) => {
+            const { ...restArgs } = args;
+            return <LeafletMap {...restArgs} />;
+        }}
+    </Story>
+</Canvas>
+
+<ArgsTable of={LeafletMap} story="Map Controls" />
+
+## Basic Map
+
+A default map style by Leaflet Maps.
+
+<Preview withToolbar>
+    <Story name="Basic Map">
+        <LeafletMap
+            height={["300px", "400px"]}
+            width="100%"
+            lat={-12.043333}
+            lng={-77.028333}
+        >
+            <LeafletMarker />
+        </LeafletMap>
+    </Story>
+</Preview>
+
+## With Popup
+
+Popups are usually used when you want to attach some information to a map.
+
+<Preview withToolbar>
+    <Story name="With Popup">
+        <LeafletMap
+            height={["300px", "400px"]}
+            width="100%"
+            lat={-12.043333}
+            lng={-77.028333}
+        >
+            <LeafletMarker>
+                <LeafletPopup>
+                    <b>Hello world!</b>
+                    <br />I am a popup
+                </LeafletPopup>
+            </LeafletMarker>
+        </LeafletMap>
+    </Story>
+</Preview>
+
+## With Circle
+
+Adding a circle is the same (except for specifying the radius in meters as a second argument), but lets you control how it looks by passing options as the last argument when creating the object.
+
+<Preview withToolbar>
+    <Story name="With Circle">
+        <LeafletMap
+            height={["300px", "400px"]}
+            width="100%"
+            lat={-12.043333}
+            lng={-77.028333}
+        >
+            <LeafletCircle
+                fillColor="#f03"
+                color="red"
+                fillOpacity={0.5}
+                radius={500}
+            />
+        </LeafletMap>
+    </Story>
+</Preview>

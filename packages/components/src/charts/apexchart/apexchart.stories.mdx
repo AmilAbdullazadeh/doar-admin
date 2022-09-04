@@ -1,0 +1,154 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+import {
+    ApexBarChart,
+    ApexLineChart,
+    ApexAreaChart,
+    ApexPieChart,
+    ApexDonutChart,
+    ApexRadialChart,
+} from "./apexchart";
+import ApexChart from "react-apexcharts";
+import {
+    ApexBarData,
+    ApexStackedData,
+    ApexLineData,
+    ApexAreaData,
+    ApexThresholdsData,
+    ApexPieData,
+    ApexRadialData,
+} from "@doar/shared/data/apexcharts";
+
+<Meta title="Charts/ApexCharts" />
+
+# ApexCharts Charts
+
+<p class="sbdocs-desc">
+    React-ApexCharts is a wrapper component for ApexCharts ready to be
+    integrated into your react.js application to create stunning React Charts.
+</p>
+
+## Bar Chart
+
+ApexCharts supports bars and any combinations of these, in the same plot and even on the same data series.
+
+<Preview withToolbar>
+    <Story name="Bar Chart">
+        <ApexBarChart
+            options={ApexBarData.options}
+            series={ApexBarData.series}
+            height="350px"
+            width="100%"
+        />
+    </Story>
+</Preview>
+
+## Stacked Chart
+
+With this plugin, you can have stack the series. This is useful if you wish to display both a total and the constituents it is made of.
+
+<Preview withToolbar>
+    <Story name="Stacked Chart">
+        <ApexBarChart
+            options={ApexStackedData.options}
+            series={ApexStackedData.series}
+            height="350px"
+            width="100%"
+        />
+    </Story>
+</Preview>
+
+## Line Chart
+
+ApexChars supports lines and any combinations of these, in the same plot and even on the same data series.
+
+<Preview withToolbar>
+    <Story name="Line Chart">
+        <ApexLineChart
+            options={ApexLineData.options}
+            series={ApexLineData.series}
+            height="350px"
+            width="100%"
+        />
+    </Story>
+</Preview>
+
+## Area Chart
+
+ApexChars supports area and any combinations of these, in the same plot and even on the same data series.
+
+<Preview withToolbar>
+    <Story name="Area Chart">
+        <ApexAreaChart
+            options={ApexAreaData.options}
+            series={ApexAreaData.series}
+            height="350px"
+            width="100%"
+        />
+    </Story>
+</Preview>
+
+## Thresholds
+
+With this plugin, you can apply a specific color to the part of a data series below a threshold.
+
+<Preview withToolbar>
+    <Story name="Thresholds">
+        <ApexBarChart
+            options={ApexThresholdsData.options}
+            series={ApexThresholdsData.series}
+            height="350px"
+            width="100%"
+        />
+    </Story>
+</Preview>
+
+## Pie Chart
+
+The default pie chart.
+
+<Preview withToolbar>
+    <Story name="Pie Chart">
+        <ApexPieChart
+            options={ApexPieData.options}
+            series={ApexPieData.series}
+            height={300}
+            width={510}
+        />
+    </Story>
+</Preview>
+
+## Donut Chart
+
+The default donut chart.
+
+<Preview withToolbar>
+    <Story name="Donut Chart">
+        <ApexDonutChart
+            options={ApexPieData.options}
+            series={ApexPieData.series}
+            width={510}
+            height={300}
+        />
+    </Story>
+</Preview>
+
+## Radial Chart
+
+The default Radial chart.
+
+<Preview withToolbar>
+    <Story name="Radial Chart">
+        <ApexRadialChart
+            options={ApexRadialData.options}
+            series={ApexRadialData.series}
+            width={510}
+            height={300}
+        />
+    </Story>
+</Preview>

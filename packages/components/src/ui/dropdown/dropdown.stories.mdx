@@ -1,0 +1,137 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+
+import {
+    Dropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+} from "./dropdown";
+
+<Meta title="UI/Dropdown" component={Dropdown} />
+
+# Overview
+
+Dropdowns are toggleable, contextual overlays for displaying lists of links and more.
+
+<Canvas>
+    <Story
+        name="Dropdown Controls"
+        argTypes={{
+            direction: {
+                control: {
+                    type: `select`,
+                },
+            },
+            className: {
+                control: {
+                    type: `text`,
+                },
+            },
+        }}
+        args={{
+            direction: `down`,
+        }}
+    >
+        {(args) => {
+            const { children, ...restArgs } = args;
+            return (
+                <Dropdown {...restArgs}>
+                    <DropdownToggle>Dropdown Toggle</DropdownToggle>
+                    <DropdownMenu>
+                        <DropdownItem path="#">Action</DropdownItem>
+                        <DropdownItem active path="#">
+                            Another Action
+                        </DropdownItem>
+                        <DropdownItem path="#">
+                            Something else here
+                        </DropdownItem>
+                    </DropdownMenu>
+                </Dropdown>
+            );
+        }}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Dropdown} story="Dropdown Controls" />
+
+## Basic Example
+
+Wrap the DropdownToggle and the DropdownMenu component within Dropdown component.
+
+<Preview withToolbar>
+    <Story name="Basic Example">
+        <Dropdown>
+            <DropdownToggle>Dropdown Toggle</DropdownToggle>
+            <DropdownMenu>
+                <DropdownItem path="#">Action</DropdownItem>
+                <DropdownItem active path="#">
+                    Another Action
+                </DropdownItem>
+                <DropdownItem path="#">Something else here</DropdownItem>
+            </DropdownMenu>
+        </Dropdown>
+    </Story>
+</Preview>
+
+## Dropup
+
+Trigger dropdown menus above elements by adding `direction="up"` to the Dropdown component.
+
+<Preview withToolbar>
+    <Story name="Dropup">
+        <Dropdown direction="up">
+            <DropdownToggle>Dropdown Toggle</DropdownToggle>
+            <DropdownMenu>
+                <DropdownItem path="#">Action</DropdownItem>
+                <DropdownItem active path="#">
+                    Another Action
+                </DropdownItem>
+                <DropdownItem path="#">Something else here</DropdownItem>
+            </DropdownMenu>
+        </Dropdown>
+    </Story>
+</Preview>
+
+## Droleft
+
+Trigger dropdown menus above elements by adding `direction="left"` to the Dropdown component.
+
+<Preview withToolbar>
+    <Story name="Dropleft">
+        <Dropdown direction="left">
+            <DropdownToggle>Dropdown Toggle</DropdownToggle>
+            <DropdownMenu>
+                <DropdownItem path="#">Action</DropdownItem>
+                <DropdownItem active path="#">
+                    Another Action
+                </DropdownItem>
+                <DropdownItem path="#">Something else here</DropdownItem>
+            </DropdownMenu>
+        </Dropdown>
+    </Story>
+</Preview>
+
+## Droright
+
+Trigger dropdown menus above elements by adding `direction="right"` to the Dropdown component.
+
+<Preview withToolbar>
+    <Story name="Dropright">
+        <Dropdown direction="right">
+            <DropdownToggle>Dropdown Toggle</DropdownToggle>
+            <DropdownMenu>
+                <DropdownItem path="#">Action</DropdownItem>
+                <DropdownItem active path="#">
+                    Another Action
+                </DropdownItem>
+                <DropdownItem path="#">Something else here</DropdownItem>
+            </DropdownMenu>
+        </Dropdown>
+    </Story>
+</Preview>

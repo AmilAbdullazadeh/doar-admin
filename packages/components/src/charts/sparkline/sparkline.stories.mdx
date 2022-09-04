@@ -1,0 +1,67 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+import { SparklinesBar, SparklinesLines } from "./sparkline";
+
+<Meta title="Charts/Sparkline" />
+
+# Sparkline Charts
+
+<p class="sbdocs-desc">
+    This plugin generates sparklines (small inline charts) directly in the
+    browser using data supplied either inline in the HTML, or via javascript.
+</p>
+
+## Bar Chart
+
+Below is a basic bar chart implementation that you can use.
+
+<Preview withToolbar>
+    <Story name="Bar Chart">
+        <SparklinesBar
+            data={[5, 10, 5, 20, 8, 15, 25, 12, 5, 18, 14, 10, 20, 18]}
+            width={153}
+            height={70}
+            barStyle={{ fill: "#560bd0" }}
+            barWidth={10}
+        />
+    </Story>
+</Preview>
+
+## Line Chart
+
+Below is a basic bar chart implementation that you can use.
+
+<Preview withToolbar>
+    <Story name="Line Chart">
+        <SparklinesLines
+            data={[5, 10, 5, 20, 8, 15, 25, 12, 5, 18, 14, 10, 20, 18]}
+            width={200}
+            height={70}
+            color="#0083CD"
+            lineStyle={{ fill: "none" }}
+            hasSpot={true}
+            spotSize={2}
+            spotStyle={{ fill: "#0083CD" }}
+        />
+    </Story>
+</Preview>
+
+## Area Chart
+
+Below is the basic area chart example.
+
+<Preview withToolbar>
+    <Story name="Area Chart">
+        <SparklinesLines
+            data={[5, 10, 5, 20, 8, 15, 25, 12, 5, 18, 14, 10, 20, 18]}
+            width={200}
+            height={70}
+            color="#0083CD"
+        />
+    </Story>
+</Preview>

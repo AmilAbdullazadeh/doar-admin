@@ -1,0 +1,387 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+
+import { Button } from "./button";
+import {
+    Camera,
+    ArrowLeft,
+    ArrowRight,
+    ArrowDown,
+    ArrowUp,
+    Check,
+    X,
+} from "react-feather";
+
+<Meta title="UI/Buttons" component={Button} />
+
+# Overview
+
+Buttons are clickable elements that are used to trigger actions. They communicate calls to action to the user and allow users to interact with pages in a variety of ways. Button labels express what action will occur when the user interacts with it.
+
+<Canvas>
+    <Story
+        name="Button Controls"
+        argTypes={{
+            type: {
+                control: {
+                    type: `select`,
+                    options: ["button", "submit", "reset"],
+                },
+            },
+            variant: {
+                control: {
+                    type: `select`,
+                    options: ["contained", "outlined", "texted"],
+                },
+            },
+            color: {
+                control: {
+                    type: `select`,
+                    options: [
+                        "primary",
+                        "secondary",
+                        "success",
+                        "danger",
+                        "warning",
+                        "info",
+                        "light",
+                        "dark",
+                        "white",
+                        "brand2",
+                        "facebook",
+                        "twitter",
+                    ],
+                },
+            },
+            size: {
+                control: {
+                    type: `select`,
+                    options: ["xs", "sm", "md", "lg"],
+                },
+            },
+            shape: {
+                control: {
+                    type: `select`,
+                    options: ["rounded", "square", "ellipse"],
+                },
+            },
+            fullwidth: {
+                control: {
+                    type: `boolean`,
+                },
+            },
+            active: {
+                control: {
+                    type: `boolean`,
+                },
+            },
+            disabled: {
+                control: {
+                    type: `boolean`,
+                },
+            },
+            iconButton: {
+                control: {
+                    type: `boolean`,
+                },
+            },
+            hasIcon: {
+                control: {
+                    type: `boolean`,
+                },
+            },
+            label: {
+                control: {
+                    type: `text`,
+                },
+            },
+            className: {
+                control: {
+                    type: `text`,
+                },
+            },
+            path: {
+                control: {
+                    type: `text`,
+                },
+            },
+        }}
+        args={{
+            type: `button`,
+            variant: `contained`,
+            color: `primary`,
+            size: `md`,
+            shape: `rounded`,
+            children: `Button`,
+        }}
+    >
+        {(args) => {
+            const { children, iconButton, ...restArgs } = args;
+            return (
+                <Button {...restArgs}>
+                    {iconButton ? <Camera size="24" /> : children}
+                </Button>
+            );
+        }}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Button} story="Button Controls" />
+
+## Variants
+
+Button has three different variants
+
+<Preview withToolbar>
+    <Story name="Variant">
+        <Button variant="contained" color="primary">
+            Primary
+        </Button>
+        <Button variant="outlined" color="primary">
+            Outlined
+        </Button>
+        <Button variant="texted" color="primary">
+            Texted
+        </Button>
+    </Story>
+</Preview>
+
+## Basic Styling
+
+We includes several predefined button styles, each serving its own semantic purpose, with a few extras thrown in for more control.
+
+<Preview withToolbar>
+    <Story name="Color">
+        <Button color="primary">Primary</Button>&nbsp;
+        <Button color="secondary">Secondary</Button>
+        <Button color="success">Success</Button>
+        <Button color="danger">Danger</Button>
+        <Button color="warning">Warning</Button>
+        <Button color="info">Info</Button>
+        <Button color="light">Light</Button>
+        <Button color="dark">Dark</Button>
+    </Story>
+</Preview>
+
+## Outline Buttons
+
+In need of a button, but not the hefty background colors they bring? pass the props `variant="outlined"` to remove all background images and colors on any button.
+
+<Preview withToolbar>
+    <Story name="Outlined">
+        <Button color="primary" variant="outlined">
+            Primary
+        </Button>
+        <Button color="secondary" variant="outlined">
+            Secondary
+        </Button>
+        <Button color="success" variant="outlined">
+            Success
+        </Button>
+        <Button color="danger" variant="outlined">
+            Danger
+        </Button>
+        <Button color="warning" variant="outlined">
+            Warning
+        </Button>
+        <Button color="info" variant="outlined">
+            Info
+        </Button>
+        <Button color="light" variant="outlined">
+            Light
+        </Button>
+        <Button color="dark" variant="outlined">
+            Dark
+        </Button>
+    </Story>
+</Preview>
+
+## Sizes
+
+Button can have additional sizes like larger or smaller buttons.
+
+<Preview withToolbar>
+    <Story name="Size">
+        <Button color="primary" size="xs">
+            Extra Small
+        </Button>
+        <Button color="primary" size="sm">
+            Small
+        </Button>
+        <Button color="primary" size="md">
+            Medium
+        </Button>
+        <Button color="primary" size="lg">
+            Large Button
+        </Button>
+    </Story>
+</Preview>
+
+## Button Shapes
+
+Button can have additional shapes like Rounded or Square buttons.
+
+<Preview withToolbar>
+    <Story name="Shape">
+        <Button color="primary" shape="rounded">
+            Rounded
+        </Button>
+        <Button color="primary" shape="square">
+            Square
+        </Button>
+        <Button color="primary" shape="ellipse">
+            Ellipse Button
+        </Button>
+    </Story>
+</Preview>
+
+## Full Width
+
+Create block level buttons—those that span the full width of a parent
+
+<Preview withToolbar>
+    <Story name="Full Width">
+        <Button color="primary" fullwidth>
+            Primary Button
+        </Button>
+        <Button color="secondary" fullwidth>
+            Secondary Button
+        </Button>
+    </Story>
+</Preview>
+
+## Active State
+
+Buttons will appear pressed (with a darker background, darker border, and inset shadow) when active and also by adding `active` prop.
+
+<Preview withToolbar>
+    <Story name="Active State">
+        <Button color="primary" active>
+            Primary
+        </Button>
+        <Button color="secondary" active>
+            Secondary
+        </Button>
+        <Button color="success" active>
+            Success
+        </Button>
+        <Button color="danger" active>
+            Danger
+        </Button>
+        <Button color="warning" active>
+            Warning
+        </Button>
+        <Button color="info" active>
+            Info
+        </Button>
+        <Button color="light" active>
+            light
+        </Button>
+        <Button color="dark" active>
+            dark
+        </Button>
+    </Story>
+</Preview>
+
+## Disable State
+
+Make buttons look inactive by adding the disabled boolean attribute to any button element.
+
+<Preview withToolbar>
+    <Story name="Disabled State">
+        <Button color="primary" disabled>
+            Primary
+        </Button>
+        <Button color="secondary" disabled>
+            Secondary
+        </Button>
+        <Button color="success" disabled>
+            Success
+        </Button>
+        <Button color="danger" disabled>
+            Danger
+        </Button>
+        <Button color="warning" disabled>
+            Warning
+        </Button>
+        <Button color="info" disabled>
+            Info
+        </Button>
+        <Button color="light" disabled>
+            light
+        </Button>
+        <Button color="dark" disabled>
+            dark
+        </Button>
+    </Story>
+</Preview>
+
+## Texted Button
+
+In need of a button, but not the hefty background colors they bring? pass the props `variant="texted"` to remove all background images, colors, borders and paddings on any button.
+
+<Preview withToolbar>
+    <Story name="Texted Button">
+        <Button color="primary" variant="texted">
+            Primary
+        </Button>
+        <Button color="secondary" variant="texted">
+            Secondary
+        </Button>
+        <Button color="success" variant="texted">
+            Success
+        </Button>
+        <Button color="danger" variant="texted">
+            Danger
+        </Button>
+        <Button color="warning" variant="texted">
+            Warning
+        </Button>
+        <Button color="info" variant="texted">
+            Info
+        </Button>
+        <Button color="light" variant="texted">
+            light
+        </Button>
+        <Button color="dark" variant="texted">
+            dark
+        </Button>
+    </Story>
+</Preview>
+
+## Icon Button
+
+Make icon buttons by adding only icon and add props `iconButton` and must pass describeable label by `label` props
+
+<Preview withToolbar>
+    <Story name="Icon Buttons">
+        <Button color="primary" iconButton size="xs" label="XS Icon">
+            <ArrowLeft size="16" />
+        </Button>
+        <Button color="secondary" iconButton size="sm" label="SM Icon">
+            <ArrowRight size="20" />
+        </Button>
+        <Button color="success" iconButton size="md" label="MD Icon">
+            <Check size="24" />
+        </Button>
+        <Button color="danger" iconButton size="lg" label="LG Icon">
+            <X size="30" />
+        </Button>
+        <Button
+            color="warning"
+            iconButton
+            variant="outlined"
+            label="Warning Icon"
+        >
+            <ArrowDown size="20" />
+        </Button>
+        <Button color="info" variant="texted" label="Texted Icon">
+            <ArrowUp size="20" />
+        </Button>
+    </Story>
+</Preview>

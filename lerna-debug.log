@@ -1,0 +1,13 @@
+0 silly argv {
+0 silly argv   _: [ 'add' ],
+0 silly argv   scope: '@doar/components',
+0 silly argv   globs: [],
+0 silly argv   lernaVersion: '3.22.1',
+0 silly argv   '$0': 'C:\\Users\\Bayazid\\AppData\\Roaming\\npm\\node_modules\\lerna\\cli.js',
+0 silly argv   pkg: '@storybook/addon-backgrounds-D'
+0 silly argv }
+1 notice cli v3.22.1
+2 verbose rootPath F:\themeforest-project\15.doar\doar-react\doar-react
+3 info versioning independent
+4 error Error: 404 Not Found - GET https://registry.npmjs.org/@storybook%2faddon-backgrounds-D - Not found
+4 error     at F:\themeforest-project\15.doar\doar-react\doar-react\node_modules\@evocateur\npm-registry-fetch\check-response.js:104:15

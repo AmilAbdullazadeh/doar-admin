@@ -1,0 +1,44 @@
+{
+  "name": "@doar/shared",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "main": "index.ts",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "start": "tsc -p tsconfig.json -w",
+    "build": "tsc -b",
+    "clean": "rimraf dist *.tsbuildinfo node_modules",
+    "typecheck": "tsc -p tsconfig.json",
+    "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
+    "lint:fix": "yarn lint --fix"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-typescript": "^7.12.7",
+    "@types/node": "^14.14.21",
+    "@types/react": "^17.0.0",
+    "@types/react-transition-group": "^4.4.1",
+    "@types/styled-components": "^5.1.7",
+    "@types/styled-system": "^5.1.10",
+    "@types/styled-system__theme-get": "^5.0.1",
+    "@types/uuid": "^8.3.0",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0"
+  },
+  "dependencies": {
+    "@styled-system/theme-get": "^5.1.2",
+    "moment": "^2.29.1",
+    "react": "^17.0.1",
+    "react-feather": "^2.0.9",
+    "react-transition-group": "^4.4.1",
+    "styled-bootstrap-grid": "^3.1.0",
+    "styled-components": "^5.2.1",
+    "styled-system": "^5.1.5",
+    "tinycolor2": "^1.4.2",
+    "uuid": "^8.3.2"
+  }
+}

@@ -1,0 +1,70 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+
+import { GoogleMap, GoogleMapMarker } from "./google-map";
+
+<Meta title="Maps/Google Maps" component={GoogleMap} />
+
+# Google Maps
+
+<p class="sbdocs-desc">
+    `@react-google-maps/api` allows you to use the potential of Google Maps in a
+    simple way. No more extensive documentation or large amount of code. Read
+    the{" "}
+    <a
+        href="https://react-google-maps-api-docs.netlify.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Official @react-google-maps/api Documentation
+    </a>{" "}
+    for a full list of instructions and other options.
+</p>
+
+<Canvas>
+    <Story name="Map Controls">
+        {(args) => {
+            const { ...restArgs } = args;
+            return <GoogleMap {...restArgs} />;
+        }}
+    </Story>
+</Canvas>
+
+<ArgsTable of={GoogleMap} story="Map Controls" />
+
+## Basic Map
+
+A default map style by Google Maps.
+
+<Preview withToolbar>
+    <Story name="Basic Map">
+        <GoogleMap
+            height={["300px", "400px"]}
+            width="100%"
+            lat={-12.043333}
+            lng={-77.028333}
+        />
+    </Story>
+</Preview>
+
+## Using Marker
+
+A map style with marker.
+
+<Preview withToolbar>
+    <Story name="Using Marker">
+        <GoogleMap
+            height={["300px", "400px"]}
+            width="100%"
+            lat={-12.043333}
+            lng={-77.028333}
+        >
+            <GoogleMapMarker />
+        </GoogleMap>
+    </Story>
+</Preview>

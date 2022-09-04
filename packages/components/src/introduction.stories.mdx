@@ -1,0 +1,175 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import {
+    Grid,
+    Layers,
+    Edit3,
+    Package,
+    PieChart,
+    MapPin,
+    ArrowRight,
+} from "react-feather";
+
+<Meta title="Introduction" />
+
+# Introduction
+
+Get started with over a dozen reusable components built on top of Bootstrap with styles enhancement and additional components and options.
+
+<style>{`
+    .container {
+        padding: 0;
+        max-width: 780px;
+        margin-top: 30px;
+    }
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    .col-lg-6{
+        flex: 0 0 100%;
+        max-width: 100%;
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    @media (min-width: 576px){
+        .col-lg-6{
+            flex: 0 0 46%;
+            max-width: 46%;
+        }
+    }
+    .panel{
+        border: 1px solid rgba(72, 94, 144, 0.16);
+        background-color: #fff;
+        padding: 30px;
+        height: 240px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-bottom: 25px;
+    }
+    .panel-icon{
+        margin-bottom: 25px;
+    }
+    .panel-title{
+        color: #001737;
+        margin-bottom: 20px;
+        font-size: 1.09375rem;
+        font-weight: 500;
+        line-height: 1.25;
+    }
+    .panel-body{
+        margin-bottom: 20px;
+    }
+    .panel-link{
+        font-weight: 500;
+        color: #0168fa;
+        text-decoration: none;
+        background-color: transparent;
+        font-size: 14px;
+        display: inline-flex;
+        align-items: center;
+    }
+    .panel-link svg {
+        padding-left: 10px;
+    }
+
+`}</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="panel">
+                <div class="panel-icon">
+                    <Grid size="50" color="#97a3b9" />
+                </div>
+                <h5 class="panel-title">Grid System</h5>
+                <p class="panel-body">
+                    Use Bootstrap's powerful mobile-first flexbox grid to build
+                    layouts of all shapes and sizes.
+                </p>
+                <a
+                    class="panel-link"
+                    href="?path=/docs/grid-grid-system--how-it-works"
+                >
+                    Grid System <ArrowRight color="#0168fa" size="16" />
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="panel">
+                <div class="panel-icon">
+                    <Layers size="50" color="#97a3b9" />
+                </div>
+                <h5 class="panel-title">UI Elements</h5>
+                <p class="panel-body">
+                    UI Elements are those elements that can be found in any page
+                    with a single function and that can exist alone.
+                </p>
+                <a
+                    class="panel-link"
+                    href="?path=/docs/ui-alert--alert-controls"
+                >
+                    View Elements <ArrowRight color="#0168fa" size="16" />
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="panel">
+                <div class="panel-icon">
+                    <Edit3 size="50" color="#97a3b9" />
+                </div>
+                <h5 class="panel-title">Forms</h5>
+                <p class="panel-body">
+                    Examples and usage guidelines for form control styles,
+                    layout options, and custom components...
+                </p>
+                <a
+                    class="panel-link"
+                    href="?path=/docs/forms-form-elements--input-box"
+                >
+                    View Forms <ArrowRight color="#0168fa" size="16" />
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="panel">
+                <div class="panel-icon">
+                    <PieChart size="50" color="#97a3b9" />
+                </div>
+                <h5 class="panel-title">Charts</h5>
+                <p class="panel-body">
+                    A graphical representation of data, in which the data is
+                    represented by symbols, such as bar chart.
+                </p>
+                <a
+                    class="panel-link"
+                    href="?path=/docs/charts-apexcharts--bar-chart"
+                >
+                    View Charts <ArrowRight color="#0168fa" size="16" />
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="panel">
+                <div class="panel-icon">
+                    <MapPin size="50" color="#97a3b9" />
+                </div>
+                <h5 class="panel-title">Maps</h5>
+                <p class="panel-body">
+                    Navigate the world faster and easier using these popular map
+                    plugins to use in your projects.
+                </p>
+                <a
+                    class="panel-link"
+                    href="?path=/docs/maps-google-maps--map-controls"
+                >
+                    View Maps <ArrowRight color="#0168fa" size="16" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

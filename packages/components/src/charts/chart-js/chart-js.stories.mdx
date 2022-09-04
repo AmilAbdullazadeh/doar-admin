@@ -1,0 +1,157 @@
+import {
+    Meta,
+    Story,
+    Canvas,
+    ArgsTable,
+    Preview,
+} from "@storybook/addon-docs/blocks";
+import {
+    BarChart,
+    HorizontalBarChart,
+    LineChart,
+    PieChart,
+    DonutChart,
+} from "./chart-js";
+import {
+    barChartData,
+    horizontalBarData,
+    stackedBarData,
+    lineChartData,
+    areaChartData,
+    transparentChartData,
+    pieChartData,
+} from "@doar/shared/data/chart-js";
+
+<Meta title="Charts/ChartJS" />
+
+# ChartJS Charts
+
+<p class="sbdocs-desc">
+    Simple yet flexible JavaScript charting for designers & developers. Read the
+    Official Chartjs Documentation for a full list of instructions and other
+    options.
+</p>
+
+## Bar Chart
+
+Below is a basic bar chart implementation that you can use.
+
+<Preview withToolbar>
+    <Story name="Bar Chart">
+        <BarChart
+            data={barChartData.data}
+            options={barChartData.options}
+            width={728}
+            height={300}
+        />
+    </Story>
+</Preview>
+
+## Horizontal Chart
+
+Below is the horizontal bar chart example.
+
+<Preview withToolbar>
+    <Story name="Horizontal Chart">
+        <HorizontalBarChart
+            data={horizontalBarData.data}
+            options={horizontalBarData.options}
+            width={728}
+            height={300}
+        />
+    </Story>
+</Preview>
+
+## Stacked Chart
+
+Below is the stacked bar chart example.
+
+<Preview withToolbar>
+    <Story name="Stacked Chart">
+        <BarChart
+            data={stackedBarData.data}
+            options={stackedBarData.options}
+            width={728}
+            height={300}
+        />
+    </Story>
+</Preview>
+
+## Line Chart
+
+Below is the line chart example.
+
+<Preview withToolbar>
+    <Story name="Line Chart">
+        <LineChart
+            data={lineChartData.data}
+            options={lineChartData.options}
+            width={728}
+            height={300}
+        />
+    </Story>
+</Preview>
+
+## Area Chart
+
+Below is the area chart example.
+
+<Preview withToolbar>
+    <Story name="Area Chart">
+        <LineChart
+            data={areaChartData.data}
+            options={areaChartData.options}
+            width={728}
+            height={300}
+        />
+    </Story>
+</Preview>
+
+## With Transparency
+
+Below is the bar chart example with transparency of the bar.
+
+<Preview withToolbar>
+    <Story name="With Transparency">
+        <BarChart
+            data={transparentChartData.data}
+            options={transparentChartData.options}
+            width={728}
+            height={300}
+        />
+    </Story>
+</Preview>
+
+## Pie Chart
+
+Below are an example of data in a pie chart.
+
+<Preview withToolbar>
+    <Story name="Pie Chart">
+        <>
+            <PieChart
+                data={pieChartData.data}
+                options={pieChartData.options}
+                width={415}
+                height={250}
+            />
+        </>
+    </Story>
+</Preview>
+
+## Donut Chart
+
+Below are an example of data in a donut chart.
+
+<Preview withToolbar>
+    <Story name="Donut Chart">
+        <>
+            <DonutChart
+                data={pieChartData.data}
+                options={pieChartData.options}
+                width={415}
+                height={250}
+            />
+        </>
+    </Story>
+</Preview>
